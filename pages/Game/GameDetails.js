@@ -24,7 +24,7 @@ import Rate from "../Rate"
                     <div className={styles.gameDetails_gridInfo}>
                         <div className={styles.grid_column}>
                             <p className={styles.grid_column_category}>• Platforms</p>
-                            {gameData.platforms.map(e => <p className={styles.grid_column_data}>{e.platform.name}</p>)}
+                            {gameData.platforms.map(e => <p key={e.name} className={styles.grid_column_data}>{e.platform.name}</p>)}
                         </div>
                         <div className={styles.grid_column}>
                             <p className={styles.grid_column_category}>• Lanzamiento</p>
