@@ -1,6 +1,6 @@
-import styles from "../styles/Navbar.module.css"
+import styles from "./Navbar.module.css"
 import Searchbar from "./Searchbar/Searchbar"
-import {useRef,useEffect,useContext} from "react"
+import {useEffect} from "react"
 import Link from "next/link"
 
 

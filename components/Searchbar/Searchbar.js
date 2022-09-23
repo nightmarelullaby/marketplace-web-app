@@ -1,4 +1,4 @@
-import {useRef,useEffect} from "react"
+import {useRef} from "react"
 import { useRouter } from "next/router"
 import styles from "./Searchbar.module.css"
 
@@ -15,7 +15,7 @@ export default function Searchbar(){
     
     function handleSubmit(e){
        e.preventDefault()
-       router.push(`/GameList/results/${inputValue.current}`,"/GameList/results/"+inputValue.current )
+       router.push(`../../results/${inputValue.current}`,"../../results/"+inputValue.current )
         
     }
     return(

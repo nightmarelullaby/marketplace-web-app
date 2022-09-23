@@ -1,8 +1,7 @@
-import GameCard from "./GameCard"
-import styles from "./GamesList.module.css"
-import DisplaySection from "../DisplaySection/DisplayOptions"
+import GameCard from "../components/GameList/GameCard"
+import styles from "../components/GameList/GamesList.module.css"
+import DisplaySection from "../components/DisplaySection/DisplayOptions"
 import {useRouter} from "next/router"
-import Link from "next/link"
 
 export default function AllGames({resultsData,query}){
 

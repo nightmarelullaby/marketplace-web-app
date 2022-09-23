@@ -1,4 +1,4 @@
-import styles from "../styles/Rate.module.css"
+import styles from "./Rate.module.css"
 
 export default function Rate({rate,margin}){
     return(

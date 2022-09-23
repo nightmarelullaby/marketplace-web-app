@@ -1,8 +1,6 @@
-import { useRouter } from "next/router"
-import GameCard from "../GameCard"
-import { useEffect,useState,useMemo } from "react";
-import DisplaySection from "../../DisplaySection/DisplayOptions";
-import styles from "../GamesList.module.css"
+import GameCard from "../../components/GameList/GameCard"
+import DisplaySection from "../../components/DisplaySection/DisplayOptions";
+import styles from "../../components/GameList/GamesList.module.css"
 
 export default function id({resultsData}){
 

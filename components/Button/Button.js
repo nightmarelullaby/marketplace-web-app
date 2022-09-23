@@ -4,7 +4,7 @@ import Link from "next/link"
 const Button = ({href,as,children}) => {
     return(
         <>
-        <Link as={as} href={href}>
+        <Link as={as ? as: ""} href={href ? href: ""}>
           <a className={styles.button}>
             {children}
           </a>

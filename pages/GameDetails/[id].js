@@ -1,5 +1,5 @@
- import GameDetails from "./GameDetails"
- import Back from "../BackBtn/Back"
+ import GameDetails from "../../components/Game/GameDetails"
+ import Back from "../../components/BackBtn/Back"
 
  
  const id = ({gameDetails}) => {

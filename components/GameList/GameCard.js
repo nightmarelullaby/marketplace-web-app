@@ -1,17 +1,14 @@
 import Image from "next/image"
 import styles from './GameCard.module.css'
 import Rate from "../Rate"
-import { useState,useEffect } from "react"
 import Link from "next/link"
-import { useRouter } from "next/router"
+
 
 
 export default function GameCard({game}){
-  const router = useRouter()
-  const [loading, setLoading] = useState()
     return(
       <div>
-        <Link href={`/Game/${game.id}`} as={`/Game/${game.id}`}>
+        <Link href={`../../GameDetails/${game.id}`} as={`../../GameDetails/${game.id}`}>
           <a>
             {game == undefined ? <small>¡Vaya!, no hay nada que mostrar..</small>: 
                 
