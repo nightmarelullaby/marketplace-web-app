@@ -28,14 +28,3 @@ export default function Searchbar(){
     )
 }
 
-/*
-// export async function getServerSideProps(){
-//     const req = await fetch(`https://api.rawg.io/api/games?key=138396d520ee4b03827a7254e78cbb54&search=${}`)
-//     const json = await req.json()
-//     return{
-//         props:{
-//             json
-//         }}
-// }
-
-*/
