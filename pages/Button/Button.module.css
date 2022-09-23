@@ -1,0 +1,31 @@
+.button{
+    outline: 1px solid  rgba(154,10,28,1);
+    color:rgba(154,10,28,1);
+    font-size: 14px;
+    padding: 8px 24px;
+    margin-top: 24px;
+    border-radius: 8px;
+    text-transform: uppercase;
+    position: relative;
+    overflow: hidden;
+
+}
+.button::after{
+    content: "";
+    display: block;
+    width: 120%;
+    background: linear-gradient( 90deg,  rgba(212,29,29,1), rgba(154,10,28,1));
+    position: absolute;
+    height: 180%;
+    left: 0;
+    top: -10%;
+    z-index: -1;
+    transform: translateX(-110%) skew(30deg, 0deg);
+    transition: .2s ease;
+}
+.button:hover::after{
+    transform: translateX(-5%) skew(30deg, 0deg);
+}
+.button:hover{
+    color:#fff;
+}

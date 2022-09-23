@@ -1,0 +1,24 @@
+.GamesList{
+
+}
+
+.container{
+    display:grid;
+    grid-template-columns: repeat(auto-fill, minmax(230px,1fr));
+    gap: 16px;
+    margin-top: 32px;
+}
+.title{
+    color:#343434;
+    position: relative;
+}
+.title::after{
+    content: "";
+    display: inline-block;
+    width: 5%;
+    margin-left: 8px;
+    height: .1px;
+    background-color: #c6c6c6;
+    position: absolute;
+    top: 50%;
+}

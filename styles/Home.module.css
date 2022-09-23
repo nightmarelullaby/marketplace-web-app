@@ -1,0 +1,15 @@
+.container {
+
+}
+.homeTitle{
+    color:transparent;
+    background: radial-gradient(circle, rgba(212,29,29,1) 0%, rgba(154,10,28,1) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 90.44px;
+    letter-spacing: -4px;
+}
+.homeDesc{
+    font-size: 22.62px;
+    color: #6F6F6F;
+}

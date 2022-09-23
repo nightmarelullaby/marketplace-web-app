@@ -1,0 +1,33 @@
+.formContainer{
+    margin-left: auto;
+    
+    display: flex;
+    align-items: center;
+    position: relative;    
+}
+.formButton{
+    background-color: transparent;
+    outline: none;
+    border:none;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    left: 80%;
+    pointer-events:none;
+    cursor: pointer;
+    color:#5b5b5b;
+}
+
+
+.inputText{
+    border: 1px solid #b0b0b0;
+    border-radius: 500px;
+    padding: 8px 16px;
+    position: relative;
+    transition: .155s ease;
+    width: 160px;
+}
+.inputText:focus{
+    width: 210px;
+    outline: none;
+}

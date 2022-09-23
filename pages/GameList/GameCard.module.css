@@ -1,0 +1,36 @@
+.container {
+    position:relative;
+    height: fit-content;
+    overflow: hidden;
+    display: inline-block;
+    border-radius:8px ;
+    /* -webkit-box-shadow:inset 0px 0px 0px .4px #353535;
+    -moz-box-shadow:inset 0px 0px 0px .4px #353535;
+    box-shadow:inset 0px 0px 0px .4px #353535; */
+    box-shadow: 0px 0px 3px .1px #adadad;
+    transition: .155s ease;
+}
+.container:hover{
+    box-shadow: 0px 0px 3px 1.5px #adadad;
+}
+.img{
+    display: block;
+    object-fit:cover;
+}
+.containerInfo{
+    position: relative;
+    top: -4px;
+    padding: 8px;
+    color: #353535;
+}
+.row{
+    display: flex;
+    align-items: center;
+}
+.icons{
+    cursor: pointer;
+    
+}
+.title{
+    word-break: break-word;
+}

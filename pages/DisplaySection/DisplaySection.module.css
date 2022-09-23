@@ -1,0 +1,13 @@
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.separator{
+    display: inline-block;
+    height: 16px;
+    width: .5px;
+    border: none;
+    margin: 0 12px;
+    background-color: #c6c6c6;
+}

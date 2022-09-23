@@ -1,0 +1,28 @@
+.backBtn{
+    cursor: pointer;
+    display: inline-flex;
+    padding: 8px 16px;
+    font-size: 14px;
+    align-items: center;
+    gap:4px;
+    border-radius: 8px;
+    user-select: none;
+    outline: 1px solid #2C2C2C;
+    transition: 0s;
+}
+.backBtn:active{
+  background-color: #2C2C2C;
+}
+.backBtn:active > * {
+    color:#fff;
+  }
+.backBtn > span:first-child{
+    transform: translateX(0);
+    transition: .2s ease;
+
+}
+
+.backBtn:hover > span:first-child {
+   transform: translateX(-30%);
+
+}

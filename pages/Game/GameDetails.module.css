@@ -1,0 +1,56 @@
+.gameContainer{
+    display:flex;
+    flex-direction: column;
+}
+.container_row{
+    display: grid;
+    height: 60vh;
+    gap:32px;
+    grid-template-columns: minmax(200px,.8fr) auto;    
+}
+
+.img{
+    width: 100%;
+    border-radius:8px;
+    object-fit: cover;
+}
+.imgContainer{
+    min-width: 100%;
+
+    display: block;
+    position: relative;
+
+}
+.grid_column_category{
+    color:#6F6F6F;
+    font-weight: 600;
+}
+.grid_column_data{
+    color:#2C2C2C;
+    font-weight: 700;
+
+}
+.gameDetails_gridInfo{
+    margin-top: 24px;
+    display: grid;
+    gap:16px;
+    grid-template-columns: auto auto auto;
+}
+.gameDetails_mainTitle{
+    font-size:45.23px ;
+    color:#2C2C2C;
+}
+.gameDetails_developer{
+    color: #6F6F6F;
+    font-weight: 600;
+}
+@media all and (max-width:1024px){
+    .container_row{
+        display:flex;
+        flex-direction: column;
+    } .imgContainer{
+        min-width: 100%;
+    }
+    .img{
+    }
+}

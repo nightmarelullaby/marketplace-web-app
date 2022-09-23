@@ -1,0 +1,16 @@
+import styles from "./Button.module.css"
+import Link from "next/link"
+
+const Button = ({href,as,children}) => {
+    return(
+        <>
+        <Link as={as} href={href}>
+          <a className={styles.button} href="/">
+            {children}
+          </a>
+        </Link>
+        </>
+    )
+}
+
+export default Button
