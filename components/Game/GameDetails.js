@@ -9,6 +9,8 @@ import Rate from "../Rate"
             <section className={styles.container_row}>
                 <div className={styles.imgContainer}>
                     <Image 
+                    placeholder="blur"
+                    blurDataURL="iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8LwkAAh0BGumlBj4AAAAASUVORK5CYII=="
                     alt={game.description}
                     width={1000}
                     height={500}

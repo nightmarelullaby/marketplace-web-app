@@ -14,7 +14,14 @@ export default function GameCard({game}){
                 
                 <div className={styles.container}>
                   {game.background_image != null ? 
-                  <Image alt={game.description} className={styles.img} width="600" height="400" src={game.background_image}/>: <small>No image</small>}
+                  <Image 
+                  alt={game.description} 
+                  className={styles.img} 
+                  width="600" 
+                  height="400" 
+                  placeholder="blur"
+                  blurDataURL="iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8LwkAAh0BGumlBj4AAAAASUVORK5CYII=="
+                  src={game.background_image}/>: <small>No image</small>}
     
                   <div className={styles.containerInfo}>
                   <Rate margin={true} rate={game.metacritic}/>
