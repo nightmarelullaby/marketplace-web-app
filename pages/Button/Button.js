@@ -5,7 +5,7 @@ const Button = ({href,as,children}) => {
     return(
         <>
         <Link as={as} href={href}>
-          <a className={styles.button} href="/">
+          <a className={styles.button}>
             {children}
           </a>
         </Link>

@@ -12,12 +12,12 @@ export default function GameCard({game}){
     return(
       <div>
         <Link href={`/Game/${game.id}`} as={`/Game/${game.id}`}>
-          <a href="/">
+          <a>
             {game == undefined ? <small>¡Vaya!, no hay nada que mostrar..</small>: 
                 
                 <div className={styles.container}>
                   {game.background_image != null ? 
-                  <Image className={styles.img} width="600" height="400" src={game.background_image}/>: <small>No image</small>}
+                  <Image alt={game.description} className={styles.img} width="600" height="400" src={game.background_image}/>: <small>No image</small>}
     
                   <div className={styles.containerInfo}>
                   <Rate margin={true} rate={game.metacritic}/>
@@ -25,8 +25,8 @@ export default function GameCard({game}){
     
                   <div className={styles.row}>
                     <small style={{marginRight:"auto",fontSize:"16px"}} >{game.released}</small>
-                    <span style={{fontSize:"20px",marginRight:"8px"}} class="material-symbols-sharp googleIcons">more_horiz</span>
-                    <span style={{fontSize:"20px"}} class="material-symbols-sharp googleIcons">favorite</span>
+                    <span style={{fontSize:"20px",marginRight:"8px"}} className="material-symbols-sharp googleIcons">more_horiz</span>
+                    <span style={{fontSize:"20px"}} className="material-symbols-sharp googleIcons">favorite</span>
                   </div>
     
     

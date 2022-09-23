@@ -9,6 +9,7 @@ import Rate from "../Rate"
             <section className={styles.container_row}>
                 <div className={styles.imgContainer}>
                     <Image 
+                    alt={game.description}
                     width={1000}
                     height={500}
                     quality={90}
@@ -31,7 +32,7 @@ import Rate from "../Rate"
                         </div>
                         <div className={styles.grid_column}>
                             <p className={styles.grid_column_category}>• Géneros</p>
-                            {gameData.genres.map(e=> <p className={styles.grid_column_data}>{e.name}</p>)}
+                            {gameData.genres.map(e=> <p key={e.name} className={styles.grid_column_data}>{e.name}</p>)}
                         </div>
                         <div className={styles.grid_column}>
                             <p className={styles.grid_column_category}>• Calificación</p>
@@ -41,7 +42,7 @@ import Rate from "../Rate"
                 </div>
             </section>
             <section>
-                <div gallery>
+                <div >
 
                 </div>
             </section>

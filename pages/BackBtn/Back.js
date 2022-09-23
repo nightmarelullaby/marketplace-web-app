@@ -7,7 +7,7 @@ const Back = () => {
     return(
         <div style={{marginBottom:"16px"}} >
             <span onClick={() => router.back()} className={styles.backBtn}>
-                <span style={{fontSize:"14px"}} class="material-symbols-outlined">arrow_back</span>
+                <span style={{fontSize:"14px"}} className="material-symbols-outlined">arrow_back</span>
                 <span>Back</span>
             </span>
  

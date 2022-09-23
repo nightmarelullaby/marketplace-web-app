@@ -22,7 +22,7 @@ export default function Searchbar(){
         <div className={styles.formContainer}>
             <form onChange={(e)=>handleChange(e)} onSubmit={(e)=>handleSubmit(e)} className={styles.formContainer}>
                 <input placeholder="Search a game.." className={styles.inputText} onChange={(e)=> handleChange(e)} type="text" />
-                <button className={styles.formButton} onClick={(e) => e.preventDefault}><span class="material-symbols-outlined">search</span></button>
+                <button className={styles.formButton} onClick={(e) => e.preventDefault}><span className="material-symbols-outlined">search</span></button>
             </form>
         </div>
     )

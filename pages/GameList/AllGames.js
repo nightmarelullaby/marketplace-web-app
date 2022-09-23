@@ -23,7 +23,7 @@ export default function AllGames({resultsData,query}){
           <DisplaySection/>
           <div className={styles.container}>
               {resultsData.map(game => 
-                <GameCard key={game.name} game={game}/>
+                <GameCard key={game.id} game={game}/>
               )}
           </div>
           <button onClick={(e)=> handlePagination(e)}>Back</button>

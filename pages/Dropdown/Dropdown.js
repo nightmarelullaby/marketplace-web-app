@@ -12,7 +12,7 @@ export default function Dropdown({title}){
 
     return(
         <div  className={styles.container} style={{position:"relative",zIndex:"100"}}>
-                <button className={styles.button}>{title} <strong> Top rated</strong> { dropdown ? <span class="material-symbols-outlined">chevron_right</span> : <span class="material-symbols-outlined">expand_more</span>}</button>
+                <button className={styles.button}>{title} <strong> Top rated</strong> { dropdown ? <span className="material-symbols-outlined">chevron_right</span> : <span className="material-symbols-outlined">expand_more</span>}</button>
                 <ul className={styles.buttonOptions}>
                     <li className={styles.buttonOptions_element}>Soon...</li>
                     <li className={styles.buttonOptions_element}>Soon...</li>
