@@ -9,7 +9,6 @@ export default function Searchbar(){
     function handleChange(e){
         e.preventDefault()
         inputValue.current = e.target.value
-        console.log(inputValue.current)
     }
 
     
