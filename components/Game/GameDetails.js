@@ -36,7 +36,7 @@ import Label from "../Label/Label"
                         </div>
                         <div className={styles.grid_column}>
                             <p className={styles.grid_column_category}>Lanzamiento</p>
-                            <p className={styles.grid_column_data} >{gameData.released}</p>
+                            <p className={styles.grid_column_data} >{gameData.released != null || undefined ? gameData.released: Unknow}</p>
                         </div>
 
                         <div className={styles.grid_column}>

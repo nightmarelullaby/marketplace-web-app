@@ -28,7 +28,7 @@ export default function GameCard({game}){
                   <h3 className={styles.title}>{game.name}</h3>
     
                   <div className={styles.row}>
-                    <small style={{marginRight:"auto",fontSize:"16px"}} >{game.released.slice(0,4)}</small>
+                    <small style={{marginRight:"auto",fontSize:"16px"}} >{game.released != null || undefined ?  game.released.slice(0,4): Unknow}</small>
                     <span style={{fontSize:"20px",marginRight:"8px"}} className="material-symbols-sharp googleIcons">more_horiz</span>
                     <span style={{fontSize:"20px"}} className="material-symbols-sharp googleIcons">favorite</span>
                   </div>
