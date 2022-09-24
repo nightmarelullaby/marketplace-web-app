@@ -9,11 +9,14 @@ export default function id({resultsData}){
       <div className={styles.GamesList}> 
           <h1 className={styles.title}>Results</h1>
           <DisplaySection/>
-          <div className={styles.container}>
-              {resultsData.map(game => 
-                <GameCard key={game.name} game={game}/>
-              )}
-          </div>
+		  {resultsData != undefined || null ?
+			  <div className={styles.container}>
+				  {resultsData.map(game => 
+					<GameCard key={game.name} game={game}/>
+				  )}
+			  </div>: <small>No se encontraron coincidencias..</small>
+		  }
+
       </div>
     </div>
     )
