@@ -11,7 +11,7 @@ export default function Navbar(){
 
                 <ul className={styles.navbarContainer}>
                     <Link href="/">
-                        <div className={styles.navbarElement}><span className="material-symbols-outlined">videogame_asset</span>Game</div>
+                        <div className={styles.navbarElement}><span className="material-symbols-outlined">videogame_asset</span>gamesDB</div>
                     </Link>
                     <Searchbar/>
                     <div style={{display:"flex"}}>

@@ -18,7 +18,7 @@ export default function AllGames({resultsData,query}){
 
     return(
       <div className={styles.GamesList}> 
-          <h1 className={styles.title}>Lastest launches</h1>
+          <h1 className={styles.title}>All games</h1>
           <DisplaySection/>
           <div className={styles.container}>
               {resultsData.map(game => 
@@ -38,12 +38,17 @@ AllGames.getInitialProps = async ({query }) => {
   const json = await response.json()
   const {results} = json
 
+  
   results.forEach(e => resultsData.push({
     name:e.name, 
     id:e.id,
     background_image:e.background_image,
     metacritic:e.metacritic,
-    released:e.released
+    released:e.released,
+    platforms:e.platforms,
+    developers:e.developers,
+    description:e.description,
+    genres:e.genres
   }))
   return ({resultsData,query})
 }

@@ -5,10 +5,10 @@
     font-size: 14px;
     align-items: center;
     gap:4px;
-    border-radius: 8px;
+    border-radius: 32px;
     user-select: none;
     outline: 1px solid #2C2C2C;
-    transition: 0s;
+    transition: .4s;
 }
 .backBtn:active{
   background-color: #2C2C2C;

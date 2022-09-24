@@ -4,9 +4,9 @@
 }
 .container_row{
     display: grid;
-    height: 60vh;
+    height: auto;
     gap:32px;
-    grid-template-columns: minmax(200px,.8fr) auto;    
+    grid-template-columns: minmax(500px,.8fr) minmax(100px,1fr);    
 }
 
 .img{
@@ -26,6 +26,7 @@
     font-weight: 600;
 }
 .grid_column_data{
+    font-size: 14px;
     color:#2C2C2C;
     font-weight: 700;
 
@@ -43,6 +44,13 @@
 .gameDetails_developer{
     color: #6F6F6F;
     font-weight: 600;
+}
+.labelsGrid{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    
 }
 @media all and (max-width:1024px){
     .container_row{

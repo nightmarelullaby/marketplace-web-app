@@ -3,6 +3,7 @@
 
  
  const id = ({gameDetails}) => {
+    console.log(gameDetails)
 
 
     return(
