@@ -45,7 +45,6 @@ import Label from "../Label/Label"
                             {gameData.genres.map(e=> 
                             <>
                                <Label content={e.name}/>
-                                <Label content={e.name}/>
                             </>
                             )}
                             </div>
