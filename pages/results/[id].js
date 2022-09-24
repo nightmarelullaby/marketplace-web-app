@@ -21,7 +21,7 @@ export default function id({resultsData}){
 id.getInitialProps = async (ctx) => {
     const {query} = ctx
     const resultsData = []
-    const response = await fetch(`https://api.rawg.io/api/games?key=138396d520ee4b03827a7254e78cbb54&search=${query.id}&search_precise=true`)
+    const response = await fetch(`https://api.rawg.io/api/games?key=138396d520ee4b03827a7254e78cbb54&search=${query.id}`)
     const json = await response.json()
     const {results} = json
   
