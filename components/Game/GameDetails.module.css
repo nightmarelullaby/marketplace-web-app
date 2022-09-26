@@ -24,9 +24,10 @@
 .grid_column_category{
     color:#6F6F6F;
     font-weight: 600;
+    margin-bottom: 8px;
 }
 .grid_column_data{
-    font-size: 14px;
+    font-size: 16px;
     color:#2C2C2C;
     font-weight: 700;
 
@@ -37,6 +38,7 @@
     gap:16px;
     grid-template-columns: auto auto auto;
 }
+
 .gameDetails_mainTitle{
     font-size:45.23px ;
     color:#2C2C2C;
@@ -60,5 +62,12 @@
         min-width: 100%;
     }
     .img{
+    }
+}
+@media all and (max-width:450px){
+    .gameDetails_gridInfo{
+        display: flex;
+        flex-direction: column;
+        gap:24px;
     }
 }

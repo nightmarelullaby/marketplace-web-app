@@ -8,7 +8,7 @@ export default function DisplaySection(){
         <div>
             <div className={styles.container}>
                 <DisplayOptions/>
-                <div style={{display:"flex", alignItems:"center"}}>
+                <div className={styles.dropdownContainer} >
                     <Dropdown title={"Order by: "}/>
                     <hr className={styles.separator}></hr>
                     <Dropdown title={"Genres "}/>

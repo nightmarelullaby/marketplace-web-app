@@ -1,23 +1,27 @@
  import GameDetails from "../../components/Game/GameDetails"
  import Back from "../../components/BackBtn/Back"
-
+import { useRouter } from "next/router"
  
- const id = ({gameDetails}) => {
-    console.log(gameDetails)
+ const Id = ({json}) => {
 
-
+    const router = useRouter()
+    const handleback = () => router.back()
     return(
         <div>
-            <Back/>
-            <GameDetails game={gameDetails}/>
+            <Back action={handleback}>
+                <span style={{fontSize:"14px"}} className="material-symbols-outlined">arrow_back</span>
+                <span>Back</span>
+            </Back>
+            <GameDetails game={json}/>
         </div>
     
     )
 }
-id.getInitialProps = async (ctx) => {
+export async function getServerSideProps(ctx){
+    const key = process.env.DB_KEY
     const gameDetails = []
     const {query} = ctx
-    const response = await fetch(`https://api.rawg.io/api/games/${query.id}?key=138396d520ee4b03827a7254e78cbb54`)
+    const response = await fetch(`https://api.rawg.io/api/games/${ctx.query.id}?key=${key}`)
     const json = await response.json()
     const {name,
         background_image,
@@ -42,8 +46,10 @@ id.getInitialProps = async (ctx) => {
         platforms,
         developers,
         esrb_rating})
-    return ({gameDetails})
+    return {
+        props:{json}
+    }
 
     
 }
-export default id
+export default Id

@@ -2,16 +2,20 @@ import GameCard from "../components/GameList/GameCard"
 import styles from "../components/GameList/GamesList.module.css"
 import DisplaySection from "../components/DisplaySection/DisplayOptions"
 import {useRouter} from "next/router"
+import Back from "../components/BackBtn/Back"
 
-export default function AllGames({resultsData,query}){
-
+export default function AllGames({results}){
 
   const router = useRouter()
+
+  const handlePaginationNext = (e) =>{
+    router.push(`?page=${Number(router.query.page)+ 1}`)
+  }
     const handlePagination = (e)=>{
       e.preventDefault()
-      if(query.page <= 1) return null
+      if(router.query.page <= 1) return null
       else{
-        router.push(`?page=${Number(query.page)- 1}`)
+        router.push(`?page=${Number(router.query.page)- 1}`)
       }
 
     }
@@ -21,25 +25,34 @@ export default function AllGames({resultsData,query}){
           <h1 className={styles.title}>All games</h1>
           <DisplaySection/>
           <div className={styles.container}>
-              {resultsData.map(game => 
+              {results.map(game => 
                 <GameCard key={game.id} game={game}/>
               )}
           </div>
-          <button onClick={(e)=> handlePagination(e)}>Back</button>
-          <button onClick={()=> router.push(`?page=${Number(query.page)+ 1}`)} >Next</button>
+
+          <Back action={handlePagination}>
+                <span>back</span>
+                <span style={{fontSize:"14px"}} className="material-symbols-outlined">arrow_back</span>
+          </Back>
+  
+          <Back action={handlePaginationNext}>
+                <span>next</span>
+                <span style={{fontSize:"14px"}} className="material-symbols-outlined">arrow_forward</span>
+
+          </Back>
+
       </div>
     )
 }
 
-AllGames.getInitialProps = async ({query }) => {
-
+export async function getServerSideProps (ctx) {
+  const key = process.env.DB_KEY
   const resultsData = []
-  const response = await fetch(`https://api.rawg.io/api/games?key=138396d520ee4b03827a7254e78cbb54&page=${query.page}`)
+  const response = await fetch(`https://api.rawg.io/api/games?key=${key}&page=${ctx.query.page}`)
   const json = await response.json()
   const {results} = json
 
-  
-  results.forEach(e => resultsData.push({
+  await results.forEach(e => resultsData.push({
     name:e.name, 
     id:e.id,
     background_image:e.background_image,
@@ -50,7 +63,12 @@ AllGames.getInitialProps = async ({query }) => {
     description:e.description,
     genres:e.genres
   }))
-  return ({resultsData,query})
+  return {
+      props:{
+        results
+      }
+    }
+  
 }
 
 

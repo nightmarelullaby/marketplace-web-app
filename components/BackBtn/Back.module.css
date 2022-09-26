@@ -5,8 +5,10 @@
     font-size: 14px;
     align-items: center;
     gap:4px;
+    border:none;
     border-radius: 32px;
     user-select: none;
+    background-color: transparent;
     outline: 1px solid #2C2C2C;
     transition: .4s;
 }

@@ -1,0 +1,41 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    gap:8px;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+
+}
+
+.loaderContainer{
+    height: 200px;
+    display: inline-block;
+    width: 200px;
+    display: flex;
+    justify-content: center;
+}
+.text{
+    color: #2C2C2C;
+}
+.loaderContainer::after{
+    content: "";
+    border: 10px solid #2C2C2C;
+    background-color: transparent;
+    width: 70px;
+    height: 70px;
+    display: block;
+    border-radius: 50%;
+    border-color: #2C2C2C transparent #2C2C2C transparent;
+    animation: loader 1s linear infinite forwards;
+    transform: rotate(0);
+}
+
+@keyframes loader {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}

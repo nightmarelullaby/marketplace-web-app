@@ -13,7 +13,8 @@
     align-items: center;
     position: absolute;
     left: 80%;
-    pointer-events:none;
+    /* pointer-events:none; */
+    z-index: 20;
     cursor: pointer;
     color:#5b5b5b;
 }

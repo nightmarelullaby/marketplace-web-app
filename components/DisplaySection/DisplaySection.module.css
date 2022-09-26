@@ -11,3 +11,26 @@
     margin: 0 12px;
     background-color: #c6c6c6;
 }
+.dropdownContainer{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: flex-end;
+}
+@media all and (max-width:450px){
+    .container{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .dropdownContainer{
+        flex-direction: column;
+        /* justify-content: flex-start; */
+        align-items: flex-start;
+        gap: 8px;
+    }
+    .separator{
+        height: 1px;
+        width: 10%;
+    }
+}
