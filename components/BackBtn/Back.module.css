@@ -12,19 +12,14 @@
     outline: 1px solid #2C2C2C;
     transition: .4s;
 }
-.backBtn:active{
-  background-color: #2C2C2C;
-}
-.backBtn:active > * {
-    color:#fff;
-  }
-.backBtn > span:first-child{
+
+.backBtn .icon{
     transform: translateX(0);
     transition: .2s ease;
 
 }
 
-.backBtn:hover > span:first-child {
+.backBtn:hover .icon{
    transform: translateX(-30%);
 
 }

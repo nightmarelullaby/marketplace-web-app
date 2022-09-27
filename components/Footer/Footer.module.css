@@ -1,6 +1,7 @@
 .footer{
     background-color: #2C2C2C;
     padding: 30px;
+
 }
 .footerColumn_ul{
     list-style-type: none;
@@ -9,7 +10,5 @@
     gap: 16px;
 }
 .footerColumn{
-
     color: #fff;
-
 }

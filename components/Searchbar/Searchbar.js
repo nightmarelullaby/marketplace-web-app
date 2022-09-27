@@ -15,6 +15,7 @@ export default function Searchbar(){
     function handleSubmit(e){
        e.preventDefault()
        router.push(`../../results/${inputValue.current}`,"../../results/"+inputValue.current )
+       e.target[0].value =""
         
     }
     return(

@@ -12,7 +12,7 @@ export const Footer = () => {
                     </ul>
                 </div>
                 <div className={styles.footerColumn}>
-                    <p>Web creada con fines educativos</p>
+                    <p></p>
                 </div>
             </footer>
         </>

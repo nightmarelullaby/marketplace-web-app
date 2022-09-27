@@ -9,7 +9,22 @@
     font-size: 90.44px;
     letter-spacing: -4px;
 }
+
+
 .homeDesc{
     font-size: 22.62px;
     color: #6F6F6F;
+}
+@media all and (max-width:600px){
+    .homeTitle{
+        font-size: 63.96px
+    }
+}
+@media all and (max-width:350px){
+    .homeTitle{
+        font-size: 45.23px;
+    }
+    .homeDesc{
+        font-size: 16px;
+    }
 }

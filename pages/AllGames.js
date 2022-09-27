@@ -7,15 +7,15 @@ import Back from "../components/BackBtn/Back"
 export default function AllGames({results}){
 
   const router = useRouter()
+  const page = Number(router.query.page)
 
   const handlePaginationNext = (e) =>{
-    router.push(`?page=${Number(router.query.page)+ 1}`)
+    router.push(`?page=${page + 1}`)
   }
     const handlePagination = (e)=>{
-      e.preventDefault()
       if(router.query.page <= 1) return null
       else{
-        router.push(`?page=${Number(router.query.page)- 1}`)
+        router.push(`?page=${page - 1}`)
       }
 
     }
@@ -29,17 +29,19 @@ export default function AllGames({results}){
                 <GameCard key={game.id} game={game}/>
               )}
           </div>
+          <div style={{display:"flex",justifyContent:"center",gap:"24px",alignItems:"center",height:"80px"}}>
+            {page == 1 ? null :            
+            <Back action={handlePagination}>
+                  <span style={{fontSize:"14px"}} className="material-symbols-outlined icon">arrow_back</span>
+                  <span>back</span>
+            </Back>}
+            <Back action={handlePaginationNext}>
+                  <span>next</span>
+                  <span style={{fontSize:"14px"}} className="material-symbols-outlined icon">arrow_forward</span>
+            </Back>
+          </div>
 
-          <Back action={handlePagination}>
-                <span>back</span>
-                <span style={{fontSize:"14px"}} className="material-symbols-outlined">arrow_back</span>
-          </Back>
-  
-          <Back action={handlePaginationNext}>
-                <span>next</span>
-                <span style={{fontSize:"14px"}} className="material-symbols-outlined">arrow_forward</span>
 
-          </Back>
 
       </div>
     )

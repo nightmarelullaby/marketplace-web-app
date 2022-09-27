@@ -15,8 +15,9 @@
     object-fit: cover;
 }
 .imgContainer{
+    filter: brightness();
     min-width: 100%;
-
+    cursor: pointer;
     display: block;
     position: relative;
 

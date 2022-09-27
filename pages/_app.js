@@ -43,7 +43,7 @@ function MyApp({ Component, pageProps }) {
       <div style={{paddingBottom:"68px"}}>
         <Navbar/>
       </div>
-      <div style={{padding:"24px"}}>
+      <div style={{padding:"24px 24px 24px 24px",height:"100%"}}>
         {loading ? <Loader/>:<Component {...pageProps} />}
       </div>
       <Footer/>

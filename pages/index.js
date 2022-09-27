@@ -1,8 +1,6 @@
 import styles from '../styles/Home.module.css'
 import Button from "../components/Button/Button"
 import {motion} from "framer-motion"
-import { Loader } from '../components/Loader/Loader'
-
 
 export default function Home() {
 
@@ -11,8 +9,12 @@ export default function Home() {
 
       <div style={{height:"100vh",display:"flex",alignItems:"center",flexDirection:"column",justifyContent:"center"}}>
         <motion.div
+        
         initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}>
+        animate={{ opacity: 1 }}
+        exit={{opacity:0}}
+        >
+        
           <h1 className={styles.homeTitle}>Bienvenido</h1>
         </motion.div>
 
