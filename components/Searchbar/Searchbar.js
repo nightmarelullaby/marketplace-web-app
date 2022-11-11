@@ -11,12 +11,15 @@ export default function Searchbar(){
         inputValue.current = e.target.value
     }
 
-    
+
     function handleSubmit(e){
        e.preventDefault()
-       router.push(`../../results/${inputValue.current}`,"../../results/"+inputValue.current )
-       e.target[0].value =""
-        
+       const searchParam = inputValue.current
+       if(inputValue.current === "") return;
+        delete router.query.id
+        router.pathname = `/results/${searchParam}`
+        router.query.search = searchParam
+        router.replace(router)
     }
     return(
         <div className={styles.formContainer}>
@@ -27,4 +30,3 @@ export default function Searchbar(){
         </div>
     )
 }
-

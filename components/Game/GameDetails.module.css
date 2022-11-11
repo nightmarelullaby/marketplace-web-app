@@ -23,14 +23,21 @@
 
 }
 .grid_column_category{
-    color:#6F6F6F;
-    font-weight: 600;
+    /* color:#6F6F6F; */
+    color:#2C2C2C;
+    font-weight: 700;
     margin-bottom: 8px;
+    font-size: 16px;
+}
+.grid_column_data_desc{
+    font-size: 16px;
+    color:#2C2C2C;
+    font-weight: 400;
 }
 .grid_column_data{
     font-size: 16px;
     color:#2C2C2C;
-    font-weight: 700;
+    font-weight: 400;
 
 }
 .gameDetails_gridInfo{
@@ -46,7 +53,8 @@
 }
 .gameDetails_developer{
     color: #6F6F6F;
-    font-weight: 600;
+    font-weight: 400;
+    font-size: 19.8px;
 }
 .labelsGrid{
     display: flex;

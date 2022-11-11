@@ -16,7 +16,7 @@ export default function Navbar(){
                     <Searchbar/>
                     <div style={{display:"flex"}}>
                         <li className={styles.navbarElement}><span className="material-symbols-outlined">toggle_off</span> <button className={styles.navbarButton} href=""> Dark mode</button></li>
-                        <li className={styles.navbarElement}><a href=""><span className="material-symbols-outlined">person</span></a></li>
+                        {/* <li className={styles.navbarElement}><a href=""><span className="material-symbols-outlined">person</span></a></li> */}
                     </div>
                 </ul>
         </div>

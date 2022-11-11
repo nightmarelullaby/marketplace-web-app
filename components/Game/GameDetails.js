@@ -34,10 +34,10 @@ import { useState } from "react"
 
                 <div>
                     <h1 className={styles.gameDetails_mainTitle}>{gameData.name}</h1>
-                    <p className={styles.gameDetails_developer}>{gameData.developers == null || undefined ? <small>Cargando...</small>: gameData.developers[0].name}</p>
+                    <p className={styles.gameDetails_developer}>{gameData.developers === undefined ? <small>Cargando...</small>  : gameData.developers[0].name  }</p>
                     <div className={styles.gameDetails_gridInfo}>
                         <div className={styles.grid_column}>
-                            <p className={styles.grid_column_category}>Platafor2mas</p>
+                            <p className={styles.grid_column_category}>Plataformas</p>
                             <div className={styles.labelsGrid}>
                             {gameData.platforms.map(e => 
                                 <p key={e.name} className={styles.grid_column_data}>• {e.platform.name}</p>                        
@@ -72,7 +72,7 @@ import { useState } from "react"
             <section>
                 <div >
                     <h4 className={styles.grid_column_category}>Descripción</h4>
-                    <td className={styles.grid_column_data} dangerouslySetInnerHTML={{__html: gameData.description}} />
+                    <td className={styles.grid_column_data_desc} dangerouslySetInnerHTML={{__html: gameData.description}} />
                 </div>
             </section>
         </div>

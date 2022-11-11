@@ -1,6 +1,6 @@
 .option{
     user-select: none;
-    font-size: 32px;
+    font-size: 14px;
 }
 
 .container{
@@ -8,16 +8,13 @@
     justify-content: center;
     align-items: center;
 }
-.container:active .buttonOptions{
-    opacity: 1;
-}
 .button{
     background-color:transparent;
     border-radius: 24px;
     color:#373737;
     cursor: pointer;
     border: 1px solid #b0b0b0;
-    padding: 8px 24px;
+    padding: 8px 32px;
     position: relative;
     display: flex;
     align-items: center;
@@ -28,20 +25,22 @@
 }
 
 .buttonOptions{
+    box-shadow: 1px 1px 4px -1px #272727;
+    padding: 10px;
     list-style-type: none;
-    border-radius: 8px;
-    opacity:0;
+    border-radius: 4px;
+    /* opacity:1; */
     position: absolute;
-    top: 100%;
-    width: 100%;
-    z-index: 1;
-    background-color: transparent;
-    transition: .3s;
+    z-index: 121323;
+    background-color: white;
 
 }
 
 .buttonOptions_element{
     background-color: #fff;
+    display: flex;
+    align-items: center;
+    gap:4px;
 }
 .options{
     background-color: #ada6a6;
