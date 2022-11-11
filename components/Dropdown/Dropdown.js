@@ -70,8 +70,6 @@ const useDropdown = () => {
 
 export function Dropdown({title,elements,query}){
     const router = useRouter()
-    const queries = Object.entries(router.query)
-    console.log(queries)
     const {dropdown, setSwitch,setFalse} = useDropdown()
     const dropdownMenu = useRef()
     const {filters,addFilter} = useFilters()
