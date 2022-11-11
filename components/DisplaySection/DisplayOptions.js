@@ -11,17 +11,17 @@ export default function DisplaySection(){
             <div className={styles.container}>
                 <DisplayOptions/>
                 <div className={styles.dropdownContainer} >
-                    <Dropdown 
+                    <Dropdown
                         query="ordering"
                         elements={[
                             {"name":"Lanzamientos recientes", "value":"released"},
                             {"name":"Mejor valorados","value":"metacritic"},
-                            {"name":"Todos","value":""}]} 
+                            {"name":"Todos","value":""}]}
                         title={"Order by: "}
                         />
 
                     <hr className={styles.separator}></hr>
-                    <Dropdown 
+                    <Dropdown
                         query="genres"
                         elements={[
                             {"name":"Acción", "value":"4"},
@@ -34,7 +34,7 @@ export default function DisplaySection(){
                             {"name":"Strategy","value":"10"},
                         ]}
                         title={"Genres "}
-                    
+
                     />
                 </div>
 

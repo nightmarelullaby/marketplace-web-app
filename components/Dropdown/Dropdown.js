@@ -70,6 +70,8 @@ const useDropdown = () => {
 
 export function Dropdown({title,elements,query}){
     const router = useRouter()
+    const queries = Object.entries(router.query)
+    console.log(queries)
     const {dropdown, setSwitch,setFalse} = useDropdown()
     const dropdownMenu = useRef()
     const {filters,addFilter} = useFilters()
@@ -101,10 +103,9 @@ export function Dropdown({title,elements,query}){
                     className={styles.buttonOptions}>
                     <ul style={{listStyleType:"none"}}>
                         {elements ? elements.map(e =>
-                            <li key={e.value} className={styles.buttonOptions_element}>
+                            <li key={e.value}className={styles.buttonOptions_element}>
                                 <input
                                     id={query}
-                                    query={query}
                                     checked={router.query.ordering === e.value ? true : false}
                                     onChange={addFilter}
                                     value={e.value}
