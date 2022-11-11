@@ -3,7 +3,7 @@ import DisplaySection from "../../components/DisplaySection/DisplayOptions";
 import styles from "../../components/GameList/GamesList.module.css"
 import {useRouter} from "next/router"
 
-export default function id({results,baseUrl}){
+export default function Id({results,baseUrl}){
   const router = useRouter()
 
   console.log(baseUrl)
