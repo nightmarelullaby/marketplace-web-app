@@ -103,7 +103,7 @@ export function Dropdown({title,elements,query}){
                     className={styles.buttonOptions}>
                     <ul style={{listStyleType:"none"}}>
                         {elements ? elements.map(e =>
-                            <li className={styles.buttonOptions_element}>
+                            <li key={query} className={styles.buttonOptions_element}>
                                 <input
                                     id={query}
                                     query={query}
