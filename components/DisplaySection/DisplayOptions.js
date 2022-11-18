@@ -1,4 +1,3 @@
-import DisplayOptions from "../Dropdown/DisplayOptions"
 import { Dropdown} from "../Dropdown/Dropdown"
 import styles from "./DisplaySection.module.css"
 import {useState} from "react"
@@ -7,11 +6,12 @@ import {useState} from "react"
 
 export default function DisplaySection(){
     return(
-        <div>
             <div className={styles.container}>
-                <DisplayOptions/>
                 <div className={styles.dropdownContainer} >
-                    <Dropdown
+                    <div style={{display:"flex",flexDirection:"column"}}>
+                    <small>Filtros</small>
+                        <div style={{display:"flex",flexDirection:"row",alignItems:"center"}}>
+                        <Dropdown
                         query="ordering"
                         elements={[
                             {"name":"Lanzamientos recientes", "value":"released"},
@@ -19,7 +19,6 @@ export default function DisplaySection(){
                             {"name":"Todos","value":""}]}
                         title={"Order by: "}
                         />
-
                     <hr className={styles.separator}></hr>
                     <Dropdown
                         query="genres"
@@ -34,11 +33,13 @@ export default function DisplaySection(){
                             {"name":"Strategy","value":"10"},
                         ]}
                         title={"Genres "}
-
                     />
-                </div>
 
+
+                        </div>
+                    </div>
+                    
+                </div>
             </div>
-        </div>
     )
 }

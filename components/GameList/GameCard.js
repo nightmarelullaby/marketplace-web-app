@@ -1,11 +1,15 @@
 import Image from "next/image"
 import styles from './GameCard.module.css'
 import Rate from "../Rate"
+import { useState } from "react"
 import Link from "next/link"
-
-
+import PopOver from "../PopOver/PopOver"
 
 export default function GameCard({game}){
+  const [open,setOpen] = useState(false)
+  const handleOpen = ()=>{
+    return setOpen(!open)
+  }
     return(
       <div>
         <Link href={`../../GameDetails/${game.id}`} as={`../../GameDetails/${game.id}`}>
@@ -29,7 +33,7 @@ export default function GameCard({game}){
     
                   <div className={styles.row}>
                     <small style={{marginRight:"auto",fontSize:"16px"}} >{game.released != null ?  game.released.slice(0,4): "Unknow"}</small>
-                    <span style={{fontSize:"20px",marginRight:"8px"}} className="material-symbols-sharp googleIcons">more_horiz</span>
+
                     <span style={{fontSize:"20px"}} className="material-symbols-sharp googleIcons">favorite</span>
                   </div>
     

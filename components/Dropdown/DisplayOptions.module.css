@@ -1,20 +1,23 @@
 .option{
     user-select: none;
     font-size: 14px;
+
 }
 
 .container{
     display: flex;
+
     justify-content: center;
     align-items: center;
 }
 .button{
-    background-color:transparent;
+    background-color:white;
+    z-index: -1;
     border-radius: 24px;
     color:#373737;
     cursor: pointer;
     border: 1px solid #b0b0b0;
-    padding: 8px 32px;
+    padding: 8px 16px;
     position: relative;
     display: flex;
     align-items: center;
@@ -31,17 +34,43 @@
     border-radius: 4px;
     /* opacity:1; */
     position: absolute;
-    z-index: 121323;
+    z-index: 200;
     background-color: white;
 
 }
 
 .buttonOptions_element{
     background-color: #fff;
+    padding:8px;
     display: flex;
+    z-index: 200;
     align-items: center;
     gap:4px;
 }
+.buttonOptions_element:hover{
+  background-color: #272727;
+  border-radius: 4px;
+  color:white;
+}
 .options{
+    z-index: 200;
     background-color: #ada6a6;
+}
+.displayText{
+  display:none;
+  color:#828282;
+}
+@media all and (max-width:450px){
+  .displayText{
+    display:block;
+    color:#828282;
+  }
+  .buttonOptions{
+    top:0;
+
+    left: 0;
+  }
+  .displayText{
+    display: none;
+  }
 }

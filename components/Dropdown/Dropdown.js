@@ -8,17 +8,16 @@ const useFilters = () => {
     const [filters,setFilters] = useState([])
 
     const addFilter = async (e) => {
-
         const queryName = e.target.id
         const value = e.target.value
 
         if(e.target.checked){
-            // router.replace({query:{
-            //     page:router.query.page,
-            //     genres:router.query.genres,
-            //     search:router.query.search,
-            //     [queryName]:value}
-            // })
+            if(!e.target.checked) {
+                delete router.query[queryName]
+                e.target.checked = false
+                return router.replace(router)
+            }
+
             if(queryName !== "genres"){
               router.query[queryName] = `-${value}`
             }
@@ -28,18 +27,7 @@ const useFilters = () => {
             e.target.checked = true
             return router.replace(router)
         }
-        if(!e.target.checked) {
-            // e.target.checked === false
-            // router.replace({query:{
-            //     genres:router.query.genres,
-            //     search:router.query.search,
-            //     page:router.query.page,}
-            // })
-
-            delete router.query[queryName]
-            e.target.checked = false
-            return router.replace(router)
-        }
+     
 
     }
     return{
@@ -71,7 +59,6 @@ const useDropdown = () => {
 export function Dropdown({title,elements,query}){
     const router = useRouter()
     const queries = Object.entries(router.query)
-    console.log(queries)
     const {dropdown, setSwitch,setFalse} = useDropdown()
     const dropdownMenu = useRef()
     const {filters,addFilter} = useFilters()
@@ -95,31 +82,32 @@ export function Dropdown({title,elements,query}){
                  { dropdown ? <span style={{fontSize:"20px"}} className="material-symbols-outlined">chevron_right</span> :
                  <span style={{fontSize:"20px"}} className="material-symbols-outlined">expand_more</span>}</button>
 
-                <motion.div
-                    ref={dropdownMenu}
-                    animate={dropdown ?{y:"48px",opacity:1,width:"130%",right:0,top:"0%",position:"absolute"} :
-                    {y:"35px",opacity:0,pointerEvents:"none",width:"130%",right:0,top:"0%",position:"absolute"}}
+                <div
+                    ref={dropdownMenu}>
+                    <motion.ul style={{listStyleType:"none"}}   
+                    animate={dropdown ?{y:"48px",opacity:1,minWidth:"10vw",width:"50vw",left:0,top:"0%",position:"absolute"} :
+                    {y:"35px",opacity:0,pointerEvents:"none",minWidth:"10vw",width:"50vw",left:0,top:"0%",position:"absolute"}}
                     transition={{type:"just",duration:.18}}
                     className={styles.buttonOptions}>
-                    <ul style={{listStyleType:"none"}}>
                         {elements ? elements.map(e =>
-                            <li key={e.value}className={styles.buttonOptions_element}>
+                            <li 
+                                key={e.value}
+                                className={styles.buttonOptions_element}>
                                 <input
                                     id={query}
-                                    checked={router.query.ordering === e.value ? true : false}
+                                    // checked={router.query.ordering === e.value ? true : false}
                                     onChange={addFilter}
                                     value={e.value}
                                     type="checkbox"
                                 />
-
-                                <lable
+                                <label
                                     className={styles.option}
                                     htmlFor>{e.name}
-                                </lable>
+                                </label>
 
                             </li>):null}
-                    </ul>
-                </motion.div>
+                    </motion.ul>
+                </div>
         </div>
     )
 }

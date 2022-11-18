@@ -36,8 +36,6 @@ export async function getServerSideProps(ctx){
       baseUrl.searchParams.set(q[0], q[1])
     })
 
-    // baseUrl.searchParams.set("search",queries.id)
-
     const response = await fetch(baseUrl)
     const json = await response.json()
     const {results} = await json
