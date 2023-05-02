@@ -12,7 +12,7 @@ export default function Id({response}) {
   )
 }
 export async function getServerSideProps(){
-  let data = await axios("http://localhost:3000/api/allProducts")
+  let data = await axios("https://marketplace-web-d9tfdf3up-nightmarelullaby.vercel.app/api/allProducts")
   const response = await JSON.parse(JSON.stringify(data.data))
   // console.log(data)
   return{

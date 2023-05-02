@@ -102,7 +102,7 @@ export async function getServerSideProps(ctx){
   const query = ctx.query
 
 console.log("in servser",query)  
-  let data = await axios.post("http://localhost:3000/api/listbyquery",{query})
+  let data = await axios.post("https://marketplace-web-d9tfdf3up-nightmarelullaby.vercel.app/api/listbyquery",{query})
   const response = await JSON.parse(JSON.stringify(data.data))
   
   return{
