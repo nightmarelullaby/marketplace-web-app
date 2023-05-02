@@ -1,5 +1,7 @@
 import {useState} from "react"
 import styles from "./ImageGallery.module.css"
+import { v4 as uuidv4 } from 'uuid';
+
 export default function ImageGallery({
 	urls=["https://images.asos-media.com/products/another-influence-quilted-panel-slim-fit-sweatpants/9851906-1-green",
 		"https://images.asos-media.com/products/another-influence-quilted-panel-slim-fit-sweatpants/9851906-2",
@@ -82,6 +84,7 @@ export default function ImageGallery({
 				{urls.map(e => {
 					if(e === selectedImage) return;
 					return(<img 
+					key={()=>uuidv4()}
 					onClick={()=> setSelectedImage(e)}
 					src={e}
 					style={{cursor:"pointer",objectFit:"cover",flexGrow:1,width:"inherit",borderRadius:6}}/>)})}

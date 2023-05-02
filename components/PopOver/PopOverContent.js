@@ -5,6 +5,7 @@ import {useRef,useEffect} from "react"
 export default function PopOverContent({
 	children,
 	position="left",
+	style,
 	state}){
 	const popOver = useRef()
 
@@ -66,6 +67,7 @@ export default function PopOverContent({
 		{state ? <motion.div 
 			ref={popOver}
 			className={className}
+			style={style ? style:{boxShadow: "rgba(100, 100, 111, 0.2) 0px 7px 29px 0px"}}
 			initial={{x:4,opacity:0,pointerEvents:"none",display:"none"}}
 			animate={state ? {x:-0,opacity:1,pointerEvents:"all",display:"block"}:{x:4,opacity:0,pointerEvents:"none",display:"none"}}
 			transition={{duration:.15}}
