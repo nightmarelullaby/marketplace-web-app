@@ -26,7 +26,6 @@ import {useRecoilState} from "recoil"
 import ShoppingCount from '../atoms/ShoppingCount'
 import imageexample from "../public/pexels-aleksandr-neplokhov-2528362.jpg"
 import UserDropdownElement from "../components/PopOver/UserDropdownElement"
-import Filters from "../components/Filters/Filters"
 import {useState,useEffect} from "react"
 import Skeleton from 'react-loading-skeleton'
 import ProductImage from '../components/Cards/ProductImage'
