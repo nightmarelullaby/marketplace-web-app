@@ -339,7 +339,7 @@ export default function Home({response=false}) {
 export async function getServerSideProps({query}){
 
   if(Object.keys(query).length > 0) {
-    let data = await axios.post(`http://localhost:${process.env.PORT}/api/listbyquery`,{query})  
+    let data = await axios.post(`https://localhost:${process.env.PORT}/api/listbyquery`,{query})  
     const response = await JSON.parse(JSON.stringify(data.data))
     return{
       props:{
@@ -348,7 +348,7 @@ export async function getServerSideProps({query}){
     }
   }
   
-  let data = await axios(`http://localhost:${process.env.PORT}/api/allProducts`)
+  let data = await axios(`https://localhost:${process.env.PORT}/api/allProducts`)
   const response = await JSON.parse(JSON.stringify(data.data))
   
   return{
