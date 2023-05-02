@@ -1,0 +1,30 @@
+.mainImg{
+	cursor: pointer;
+	margin-bottom: 12px;
+}
+.mainImg:hover{
+	filter: brightness(.9);
+	z-index: -1;
+}
+.buttonLeft, .buttonRight{
+	cursor:pointer;
+	top:50%;
+	translate:0 -40%;
+	transition: .15s ease;
+	position:absolute;
+	background-color:transparent;
+	border:none;
+	opacity: 0;
+	z-index: 1;
+}
+.buttonLeft{
+	left:16px;
+}
+.buttonRight{
+	right:16px;
+}
+
+.main:hover .buttonRight,.main:hover .buttonLeft{
+	opacity: 1;
+	translate:0 -50%;
+}

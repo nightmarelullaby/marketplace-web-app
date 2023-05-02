@@ -1,0 +1,39 @@
+.PopOverLi{
+	cursor: pointer;
+/*	padding: 8px;
+	border-radius: 4px;*/
+}
+.PopOverLi p{
+	color:#1f2328;
+}
+.PopOverLi small{
+	color: gray;
+}
+.PopOverLi svg{
+	height: 32px;
+	widows: 32px;
+}
+.PopOverLi:hover small{
+	color:#0969da;
+}
+.PopOverLi:hover p{
+	color:#0969da;
+}
+
+.PopOverLi:hover svg{
+	stroke:#0969da;
+	fill:#0969da;
+}
+
+.arrow{
+	opacity: 0;
+	translate: 0px 0px;
+	margin-left: auto;
+		transition: .15s ease;
+}
+.PopOverLi:hover .arrow{
+	stroke:#0969da;
+
+	opacity: 1;
+	translate: 2px 0px;
+}

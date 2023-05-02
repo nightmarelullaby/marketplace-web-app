@@ -1,0 +1,24 @@
+.MoreButton{
+	background: transparent;
+	border:none;
+	display: flex;
+/*	padding: 8px;*/
+	align-items: center;
+	gap:4px;
+	cursor: pointer;
+}
+.arrow{
+	transition: .15s ease;
+/*	stroke:	var(--black);*/
+}
+.MoreButton small{
+	transition: .15s ease;
+	color:	var(--black);
+}
+.MoreButton:hover .arrow{
+	translate: 4px 0;
+	stroke:	#0969da;
+}
+.MoreButton:hover small{
+/*	color:#0969da;*/
+}

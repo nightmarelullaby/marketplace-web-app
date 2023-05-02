@@ -1,0 +1,26 @@
+.button{
+    display: flex;
+    border-radius:999px;
+    overflow:hidden;
+    border:none;
+    cursor:pointer;
+    background-color: transparent;
+    transition: .15s cubic-bezier(.4,0,.2,1);
+}
+
+.button:hover{
+    background-color: rgb(43, 43, 43);
+}
+
+.svg path{
+    transition: .15s cubic-bezier(.4,0,.2,1);
+    vertical-align: middle;
+    margin: 3px;
+    display: block;
+}
+
+.svg:hover path{
+    fill: white;
+    stroke:white;
+    z-index: 200;
+}

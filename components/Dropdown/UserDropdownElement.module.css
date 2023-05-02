@@ -1,0 +1,17 @@
+.main{
+	transition: .15s ease;
+	cursor:pointer;
+}
+.main small, .main svg{
+	transition: .1s ease;
+	stroke-width: 1.6;
+}
+
+.main:hover{
+	background-color: black;
+}
+
+.main:hover small, .main:hover svg{
+	color: white;
+	stroke:white;
+}

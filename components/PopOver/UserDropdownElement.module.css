@@ -1,0 +1,21 @@
+.main{
+	transition: .15s ease;
+	cursor:pointer;
+}
+.main small, .main svg{
+	transition: .1s ease;
+	stroke-width: 1.6;
+}
+
+.main:hover{
+	background-color: #e1efff;
+}
+
+.main small, .main svg{
+	color: var(--blue);
+	stroke:var(--blue);
+}
+.main:hover small, .main:hover svg{
+	color: #2a5f9d;
+	stroke:#2a5f9d;
+}

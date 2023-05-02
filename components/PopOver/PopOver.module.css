@@ -1,0 +1,32 @@
+.popoverLeft,.popoverRight,.popoverBottom{
+	background-color:white;
+	border-radius:4px;
+	width:fit-content;
+	max-height:550px;
+	overflow-y:scroll;
+	position:absolute;
+	z-index:123123234;
+	box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+.popoverLeft{
+	bottom:0;
+	right:130%;
+}
+.popoverRight{
+	bottom:0;
+	left:100%;
+}
+.popoverBottom{
+	top:100%;
+/*	right:900px;*/
+}
+
+@media all and (max-width:480px){
+	.popoverRight,.popoverLeft{
+		width: calc(100vw - 30vw);
+	}
+	.fColumn{
+		flex-direction: column;
+	}
+	
+}
