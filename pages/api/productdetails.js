@@ -1,6 +1,6 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import getAllProducts from "../../services/getAllProducts"
-import product from "../../api/product.js"
+import product from "../../apiInfo/product.js"
 
 export default async function productDetails(req, res) {
   try{
