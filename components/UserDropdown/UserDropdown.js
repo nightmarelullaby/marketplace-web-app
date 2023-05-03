@@ -26,7 +26,7 @@ export default function UserDropdown(){
 			</svg>
 		</button>
 
-		<div style={state?{opacity:1,transition:".15s ease",position:"absolute",borderRadius:4,backgroundColor:"white",top:"140%",right:0,translate:"0 0"}:{translate:"8px -8px",opacity:0,position:"absolute",borderRadius:4,backgroundColor:"white",top:"140%",right:0,pointerEvents:"none"}}>
+		<div style={state?{opacity:1,transition:".15s ease",position:"absolute",borderRadius:4,backgroundColor:"white",top:"200%",right:0,translate:"0 0"}:{translate:"8px -8px",opacity:0,position:"absolute",borderRadius:4,backgroundColor:"white",top:"200%",right:0,pointerEvents:"none"}}>
 		<div style={{display:"flex",flexDirection:"column",gap:4}}>
 			<div style={{padding:"12px 16px",display:"flex",gap:8,alignItems:"center"}}>
 				<svg fill="black" width="24" height="24"stroke="black" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">

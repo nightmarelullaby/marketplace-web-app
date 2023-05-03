@@ -16,6 +16,7 @@ import CategoryList from '../CategoryList/CategoryList'
 import CategoryListElement from '../CategoryList/CategoryListElement'
 import UserDropdownElement from "../PopOver/UserDropdownElement"
 import UserDropdown from "../UserDropdown/UserDropdown"
+import InputText from "../InputText/InputText"
 
 function NavbarLayout({children}){
 	  
@@ -29,7 +30,7 @@ function NavbarLayout({children}){
                 e-commerce site
               </Link>
             </NavbarElement >
-          <NavbarElement style={{margin:"0 0 0 auto"}}>
+          <NavbarElement style={{margin:"0 0 0 auto",alignSelf:"center"}}>
             <PopOver>
                 <PopOverTrigger>
                   <Button customStyles={{
@@ -103,7 +104,7 @@ function NavbarLayout({children}){
                 </PopOverContent>
               </PopOver>
             </NavbarElement>
-            <NavbarElement>
+            <NavbarElement style={{alignSelf:"center"}}>
               <small style={{
                     letterSpacing:.3,
                     fontWeight:400,
@@ -111,7 +112,7 @@ function NavbarLayout({children}){
                     Marcas
                   </small>
             </NavbarElement>
-            <NavbarElement>
+            <NavbarElement style={{alignSelf:"center"}}>
               <small style={{
                     letterSpacing:.3,
                     fontWeight:400,
@@ -119,8 +120,14 @@ function NavbarLayout({children}){
                     Ofertas
                   </small>
             </NavbarElement>
-  
-            <NavbarElement style={{marginLeft:"auto",display:"flex",alignItems:"center"}}>
+            <NavbarElement style={{marginLeft:"auto"}}>
+              <Searchbar 
+                iconStyle={{marginLeft:16,alignSelf:"center"}}
+                inputStyle={{padding:8}}
+                style={{backgroundColor:"white",display:"flex",borderRadius:8,padding:0}} 
+                placeholder="Ropa, zapatos..."/>
+            </NavbarElement>
+            <NavbarElement style={{display:"flex",alignItems:"center"}}>
               <ShoppingCart color="var(--light)"/>
             </NavbarElement>
             <NavbarElement style={{display:"flex",alignItems:"center"}}>

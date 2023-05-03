@@ -4,7 +4,7 @@ import CloseButton from "../Buttons/CloseButton"
 import styles from "./Searchbar.module.css"
 import {useState,useRef,useEffect} from "react"
 
-const Searchbar = ({placeholder,action}) => {
+const Searchbar = ({placeholder,style,action,inputStyle,iconStyle}) => {
     const [formClass,setFormClass] = useState(styles.form)
     const formRef= useRef()
     const router = useRouter()
@@ -47,23 +47,28 @@ useEffect(() => {
             pathname:"/results/"+formObj.searchbar,
             query:{q:formObj.searchbar}})
       }
-    
+    const increaseWidthAtFocus = (e) => {
+        console.log(formClass)
+
+    }
     return (
         <div className={styles.cd}
          style={{position:"relative"}}>
 
         <form 
             ref={formRef}
+            onFocus={increaseWidthAtFocus}
             onClick={()=>setFormClass(styles.formActive)}
             className={formClass}
-            style={{display:"flex",borderRadius:32,}}
+            style={style?style:{display:"flex",borderRadius:32,}}
             onSubmit={action ? action : searchDefault}>
             <label style={{display:"flex"}}>
                 <svg 
+                    
                     htmlFor="searchbar" 
                     width="18" 
                     height="18"
-                    style={{marginLeft:"16px",alignSelf:"center"}}
+                    style={iconStyle?iconStyle:{marginLeft:"16px",alignSelf:"center"}}
                      viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M21 21L15.8033 15.8033M15.8033 15.8033C17.1605 14.4461 18 12.5711 18 10.5C18 6.35786 14.6421 3 10.5 3C6.35786 3 3 6.35786 3 10.5C3 14.6421 6.35786 18 10.5 18C12.5711 18 14.4461 17.1605 15.8033 15.8033Z" stroke="#0F172A" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
@@ -72,6 +77,7 @@ useEffect(() => {
             <input  
                 className={styles.searchbar}
                 name="searchbar"
+                style={inputStyle?inputStyle:null}
                 id="searchbar"
                 value={input}
                 onChange={handleChange}

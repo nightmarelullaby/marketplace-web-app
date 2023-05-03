@@ -33,7 +33,7 @@ import {useRouter} from "next/router"
 import bg from "../public/Grad_02.png"
 import PromoSection from "../components/PromoSection/PromoSection"
 import Footer from "../components/Footer/Footer"
-
+import  InputText from "../components/InputText/InputText"
 export default function Home({response=false}) {
   const router = useRouter()
   const [loading,setLoading] = useState(false )
@@ -321,7 +321,7 @@ export default function Home({response=false}) {
               <h3 style={{width:800,textAlign:"center",fontWeight:900,color:"rgb(6, 10, 15)",fontFamily:"Plus Jakarta Sans"}}><mark style={{backgroundColor:"transparent",textDecoration:"underline",fontFamily:"inherit",color:"var(--dominant-blue)"}}>Suscríbete</mark> a nuestro diario para recibir las últimas actualizacaciones</h3>
               <p style={{textAlign:"center",fontSize:19.80,color:"var(--blue)",fontFamily:"Plus Jakarta Sans"}}>Obten un 20% de descuento con tu primera orden suscribiéndote a nuestro diario</p>
               <div style={{display:"flex",gap:8,marginTop:24}}>
-                <input placeholder="Escribe tu email" style={{borderTopLeftRadius:48,borderBottomLeftRadius:48,borderRadius:4,border:"none",boxShadow: "rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px",padding:"16px 300px 16px 24px"}}/>
+                <InputText/>
                 <Button customStyles={{backgroundColor:"rgb(6, 10, 15)",borderRadius:6,border:"none",padding:"16px 32px"}}>
                   <p style={{color:"var(--light)",fontWeight:400}}>Suscribirse</p>
                 </Button>
