@@ -326,8 +326,8 @@ export default function Home({response=false}) {
                   <p style={{color:"var(--light)",fontWeight:400}}>Suscribirse</p>
                 </Button>
               </div>
-              <small style={{color:"var(--blue)",fontFamily:"Plus Jakarta Sans"}}>Podrás desuscrirte en cualquier momento</small>
-              <small style={{color:"var(--blue)",fontFamily:"Plus Jakarta Sans"}}>Leer la política de privacidad <Link href="/">aquí.</Link></small>
+              <small style={{color:"gray",fontFamily:"Plus Jakarta Sans"}}>Podrás desuscrirte en cualquier momento</small>
+              <small style={{color:"gray",fontFamily:"Plus Jakarta Sans"}}>Leer la política de privacidad <Link href="/">aquí.</Link></small>
             </section>
             
     </div>

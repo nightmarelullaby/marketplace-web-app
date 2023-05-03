@@ -15,7 +15,7 @@ import ProductCard from '../Cards/ProductCard'
 import CategoryList from '../CategoryList/CategoryList'
 import CategoryListElement from '../CategoryList/CategoryListElement'
 import UserDropdownElement from "../PopOver/UserDropdownElement"
-
+import UserDropdown from "../UserDropdown/UserDropdown"
 
 function NavbarLayout({children}){
 	  
@@ -122,6 +122,9 @@ function NavbarLayout({children}){
   
             <NavbarElement style={{marginLeft:"auto",display:"flex",alignItems:"center"}}>
               <ShoppingCart color="var(--light)"/>
+            </NavbarElement>
+            <NavbarElement style={{display:"flex",alignItems:"center"}}>
+              <UserDropdown />
             </NavbarElement>
           </Navbar>
 				{children}

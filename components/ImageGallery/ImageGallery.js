@@ -84,7 +84,7 @@ export default function ImageGallery({
 				{urls.map(e => {
 					if(e === selectedImage) return;
 					return(<img 
-					key={()=>uuidv4()}
+					key={e}
 					onClick={()=> setSelectedImage(e)}
 					src={e}
 					style={{cursor:"pointer",objectFit:"cover",flexGrow:1,width:"inherit",borderRadius:6}}/>)})}
