@@ -20,13 +20,19 @@ import AddCart from '../../components/Buttons/AddCart'
 import {useRecoilState} from "recoil"
 import ShoppingCount from '../../atoms/ShoppingCount'
 import 'react-loading-skeleton/dist/skeleton.css'
+import ProductImage from '../../components/Cards/ProductImage'
 import Skeleton from 'react-loading-skeleton'
 import {useState,useEffect} from "react"
 import FooterLayout from "../../components/FooterLayout/FooterLayout"
-import {useRouter} from "next/router"
-
+import FilterLayout from "../../components/FilterLayout/FilterLayout"
+import Filters,{FilterElement} from "../../components/Filters/Filters"
+import useSetQueryRouter from "../../hooks/useSetQueryRouter"
 export default function Id({response}){
-    const router = useRouter()
+    const {
+    setQueryCategory,
+    setQuerySearch,
+    router,
+    setNewUrl} = useSetQueryRouter()
   const [loading,setLoading] = useState(false )
   useEffect(()=>{
     setLoading(false)
@@ -39,60 +45,63 @@ export default function Id({response}){
     return setCart(cart.concat(e))
   }
   return (
-     <div style={{padding:"0 32px"}}>
+     <div style={{padding:"",width:"100%"}}>
       <main>
-      <h3>Resultados para...</h3>
-
+      <p>Mostrando 1 de 60 items para "<strong>{router.query.q}</strong>"</p>
       </main>
-     
-      <section style={{marginTop:24}}>
-      {/*<div style={{display:"flex",justifyContent:"space-between",alignItems:"center"}}>
-      <h4 style={{marginBottom:8,color:"var(--black)"}}>Resultados de la búsqueda...</h4>
-      <MoreButton>
-        <small style={{fontWeight:500}}>
-          Ver todos  
-        </small>
-      </MoreButton>
-      </div>*/}
-      {loading ? <Skeleton count={6} inline={true} style={{margin:"0 16px 16px 0"}} gap="8" height="360px" width="220px"/>:
-      <div style={{
+
+      <section style={{marginTop:16}}>
+
+   {loading || !response ? <Skeleton count={6} inline={true} style={{margin:"0 16px 16px 0"}} gap="8" height="360px" width="220px"/> : <div style={{
         display:"grid",
-        gridTemplateColumns:"repeat(auto-fill,minmax(auto,220px)",
-        gap:16,
-        height:"100vh"}}>{response.products.slice(0,5).map(e=>
+
+        gridTemplateColumns:"repeat(auto-fill,minmax(240px,auto)",
+        gap:24,}}>{response.products.map(e=>
       <div key={e.id}>
+
         <ProductCard 
           customStyles={{
             width:"100%",
             display:"flex",
             flexDirection:"column",
-            height:360,
+            height:"auto",
             borderRadius:4,
             position:"relative"}}>
-          
-          <Image 
-            width="220"
-            height="360"
+          <ProductImage 
+            tagName={e.brandName}
+            src={`http://${e.imageUrl}`}
             alt={e.name}
-            style={{borderRadius:6}}
-              objectFit='cover'
-            src={`http://${e.imageUrl}`} 
-            />
-            <div style={{display:"flex",flexDirection:"column",justifyContent:"space-between"}}>
-              <div style={{display:"flex",marginTop:8,marginBottom:8,alignItems:"center"}}>
-                <p style={{color:"rgb(55 65 81 /81%)",fontWeight:400}}> {e.name.length >= 20?`${e.name.slice(0,28)}...`:e.name}</p>
-                <p style={{color:"var(--black)",fontSize:"var(--normal--)",alignSelf:"start",fontWeight:700}}>{e.price.current.text}</p> 
-              </div>
-            </div>
-        <AddCart 
-          data={e}/>
+            style={{
+              borderRadius:6,
+              objectFit:"cover",width:"inherit",height:"240px"}}/>  
+<Link href={"/product/"+e.id}> 
 
+
+          
+              <div style={{display:"flex",marginTop:8,marginBottom:8,flexDirection:"column"}}>
+                <p style={{color:"#0f1214",fontFamily:'Plus Jakarta Sans',fontWeight:600}}> {e.name.length >= 20?`${e.name}`:e.name}</p>
+                
+               {/*<small style={{color:"#686868",fontFamily:'Plus Jakarta Sans',marginTop:8}}>{e.brandName}</small>*/} 
+                <div style={{display:"flex",marginTop:8,justifyContent:"space-between"}}>
+                <small style={{color:"#686868",fontFamily:'Plus Jakarta Sans'}}>Color · {e.colour}</small>
+                  <p style={{
+                      fontSize:19.00,
+                      color:"#0f1214",
+                      alignSelf:"start",
+                      fontWeight:500}}>$ {e.price.current.value}.00
+                    </p>
+                  </div>
+              </div>
+
+            </Link>
+        <AddCart customStyles={{padding:"14px"}}data={e}/>
         </ProductCard>
         
       </div>
         )}
 
-      </div>}
+      </div>
+ }
       </section>
     </div>
 
@@ -115,8 +124,10 @@ Id.Layout = function Layout(page) {
   return (
     <>
      <RecoilRoot>
-        <NavbarLayout>                   
+        <NavbarLayout>
+          <FilterLayout>
             {page}  
+          </FilterLayout>
         </NavbarLayout>
         <FooterLayout>
         </FooterLayout>

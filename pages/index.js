@@ -34,35 +34,20 @@ import bg from "../public/Grad_02.png"
 import PromoSection from "../components/PromoSection/PromoSection"
 import Footer from "../components/Footer/Footer"
 import  InputText from "../components/InputText/InputText"
+import useSetQueryRouter from "../hooks/useSetQueryRouter"
 export default function Home({response=false}) {
-  const router = useRouter()
+
   const [loading,setLoading] = useState(false )
 
+  const {
+    setQueryCategory,
+    setQuerySearch,
+    router,
+    setNewUrl} = useSetQueryRouter()
+
   useEffect(()=>{
-    setLoading(false)
-    console.log(loading)}
+    setLoading(false)}
     ,[router.query])
-
-
-
-
-  const switchCategory = async (query="all") =>{
-      setLoading(true)
-      const queries = router.query
-      queries.q = query
-      return router.push({pathname:"/",query:queries},null,{scroll:false})
-  }
-
-  const sortBy = async(query) => {
-      setLoading(true)
-      const queries = router.query
-      queries.sort = query
-      return router.push({pathname:"/",query:queries},null,{scroll:false})
-  }
-
-  const addToCart = (e) => {
-    return setCart(cart.concat(e))
-  }
 
   return (
     <>
@@ -162,6 +147,7 @@ export default function Home({response=false}) {
                   <MoreButton 
                     color="white" 
                     width="20" 
+                    action={()=>setNewUrl("/category/popular")}
                     height="20"
                     strokeWidth={2.4}
                     customStyles={{boxShadow: "rgba(100, 100, 111, 0.2) 0px 7px 29px 0px",backgroundColor:"black",padding:"16px 32px",borderRadius:50,position:"absolute",top:"80%",left:"50%",translate:"-50% -50%"}}>
@@ -202,57 +188,7 @@ export default function Home({response=false}) {
       </div>
             </PromoSection>
       <section style={{marginTop:48}}>
-      {/*<div style={{display:"flex",flexDirection:"column",gap:16,marginBottom:32}}>
-          {/*<Searchbar placeholder={"Camisas de vestir, zapatos de cuero..."}/>*/}
 
-         
-
-      {/*</div>*/}
-             {/* <div style={{display:"flex",gap:24}}>
-              <PopOver>
-                <PopOverTrigger>
-
-                        <Button customStyles={{ boxShadow: "rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px",border:"none",backgroundColor:"transparent",padding:"8px 16px",borderRadius:4,cursor:"pointer",display:"inline-flex",alignItems:"center",gap:4}}>
-                          <small style={{color:"var(--black)",fontWeight:500}}>
-                            Ordenar
-                          </small>
-                          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <path d="M19.5 8.25L12 15.75L4.5 8.25" stroke="#0F172A" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                        </Button>
-                        
-                        
-
-                </PopOverTrigger>
-                <PopOverContent position="bottom">
-                  <div style={{minWidth:150}}>
-                  
-                    <UserDropdownElement action={()=>sortBy("priceasc")}>
-                        
-                        <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                          <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15"></path>
-                        </svg>
-                      <small style={{whiteSpace:"nowrap",fontWeight:500}}>Precio más bajo</small>
-                    </UserDropdownElement>
-                    
-                    <UserDropdownElement action={()=>sortBy("freshness")}>
-    
-                    <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M15.362 5.214A8.252 8.252 0 0112 21 8.25 8.25 0 016.038 7.048 8.287 8.287 0 009 9.6a8.983 8.983 0 013.361-6.867 8.21 8.21 0 003 2.48z"></path>
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 18a3.75 3.75 0 00.495-7.467 5.99 5.99 0 00-1.925 3.546 5.974 5.974 0 01-2.133-1A3.75 3.75 0 0012 18z"></path>
-                      </svg>
-                      <small style={{whiteSpace:"nowrap",fontWeight:500}}>En tendencia</small>
-                    </UserDropdownElement>
-                    <UserDropdownElement action={()=>sortBy("pricedesc")}>
-                    <svg width="18" height="18"fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                      <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18.75a60.07 60.07 0 0115.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 013 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 00-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 01-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 003 15h-.75M15 10.5a3 3 0 11-6 0 3 3 0 016 0zm3 0h.008v.008H18V10.5zm-12 0h.008v.008H6V10.5z"></path>
-                    </svg>
-                      <small style={{whiteSpace:"nowrap",fontWeight:500}}>Precio más alto</small>
-                    </UserDropdownElement>
-                  </div>
-                </PopOverContent>
-              </PopOver>
-      </div>*/}
       <div style={{marginBottom:16,marginTop:8,display:"flex",justifyContent:"space-between",alignItems:"center"}}>
       <p style={{fontSize:19.80,fontWeight:700,color:"rgb(6, 10, 15)",fontFamily:"Plus Jakarta Sans"}}>Popular</p>
 
@@ -348,7 +284,7 @@ export async function getServerSideProps({query}){
     }
   }
   
-  let data = await axios(`https://marketplace-web-d9tfdf3up-nightmarelullaby.vercel.app/api/allProducts`)
+  let data = await axios(`http://localhost:3000/api/allProducts`)
   const response = await JSON.parse(JSON.stringify(data.data))
   
   return{
@@ -363,9 +299,10 @@ Home.Layout = function Layout(page) {
       <RecoilRoot>
         <NavbarLayout>                   
             {page}  
+        {/*<FooterLayout>
+        </FooterLayout>*/}
         </NavbarLayout>
-        <FooterLayout>
-        </FooterLayout>
+
       </RecoilRoot>        
     </>
     )

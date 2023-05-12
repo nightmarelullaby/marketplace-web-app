@@ -23,28 +23,6 @@ export default function PopOverContent({
 			}
 			console.log(entry.boundingClientRect.left)
       	}
-		// if(entry.boundingClientRect.left < entry.rootBounds.width) {
-		// 	entry.target.style.left = 0
-		// 	console.log(entry)
-		// }
-		// if(entry.target.style.opacity >0 && entry.boundingClientRect.left < entry.rootBounds.width) entry.target.style.left = 0
-
-        // if(!entry.isIntersecting && entry.target.style.opacity > 0) {
-        	// entry.target.style.right = "0"
-        
-          	// console.log(entry)
-          
-
-          	// console.log(entry.target.style.opacity)
-        // } else{
-        	// console.log(entry)
-        	// console.log("yes",entry)
-        	          	// console.log(opacity)
-          	// console.log(entry.target.style.opacity)
-        	
-        	// console.log("is visible")
-			// console.log(entry)
-        // }
       })
   }
 		const observer = new IntersectionObserver(handleScroll,{      
@@ -53,7 +31,6 @@ export default function PopOverContent({
       			threshold:0})
 		if(popOver.current) {
 			observer.observe(popOver.current)
-		// 	// return () => observer.unobserve(popOver.current)
 		}
 
 

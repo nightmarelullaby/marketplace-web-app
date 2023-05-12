@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { useRecoilState } from "recoil";
-import ShoppingCount from "../../atoms/ShoppingCount"
+import { useRecoilState,useRecoilValue } from "recoil";
+import ShoppingCount,{FilterShoppingCart,item} from "../../atoms/ShoppingCount"
 import styles from "./AddCart.module.css"
 
 const AddCart = ({
@@ -35,7 +35,10 @@ const AddCart = ({
             <small style={{color:"#0f1214",fontWeight:400}}>{second}</small>      
     </>
 
-    const [count,setCount] = useRecoilState(ShoppingCount)
+    
+    const [list,setList] = useRecoilState(FilterShoppingCart) 
+    const [itemValue,setItemValue] = useRecoilState(item)
+
     const [state,setState] = useState(true)
     const setTrue=() => setState(true)
     const setFalse=() => setState(true)
@@ -45,17 +48,13 @@ const AddCart = ({
     }
     const switchStateWAction = (data)=> {
         setState(prev => !prev)
-        const exist = count.filter(e => e === data)
-
-        if(exist.length <= 0) return setCount(count.concat(data))
-
-        if(exist.length >= 1) {
-            setCount(count.filter(e=> e !== data))
-            console.log(count)
+        if(state) {
+            setList({type:"add",element:data})}
+        if(!state) {
+            return setList({type:"remove",element:data})
         }
-        
-        
-        // return action()
+        return;
+
     }
     return (
         <>

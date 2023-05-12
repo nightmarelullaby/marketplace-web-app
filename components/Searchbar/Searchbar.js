@@ -4,7 +4,14 @@ import CloseButton from "../Buttons/CloseButton"
 import styles from "./Searchbar.module.css"
 import {useState,useRef,useEffect} from "react"
 
-const Searchbar = ({placeholder,style,action,inputStyle,iconStyle}) => {
+const Searchbar = ({
+    placeholder,
+    style,
+    action,
+    searchIcon=[20,20],
+    resetIcon=[20,20],
+    inputStyle,
+    iconStyle}) => {
     const [formClass,setFormClass] = useState(styles.form)
     const formRef= useRef()
     const router = useRouter()
@@ -66,8 +73,8 @@ useEffect(() => {
                 <svg 
                     
                     htmlFor="searchbar" 
-                    width="18" 
-                    height="18"
+                    width={searchIcon[0]}
+                    height={searchIcon[1]}
                     style={iconStyle?iconStyle:{marginLeft:"16px",alignSelf:"center"}}
                      viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M21 21L15.8033 15.8033M15.8033 15.8033C17.1605 14.4461 18 12.5711 18 10.5C18 6.35786 14.6421 3 10.5 3C6.35786 3 3 6.35786 3 10.5C3 14.6421 6.35786 18 10.5 18C12.5711 18 14.4461 17.1605 15.8033 15.8033Z" stroke="#0F172A" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -86,8 +93,9 @@ useEffect(() => {
                 
         </form>
         <CloseButton 
-            width={24}
-            height={24}
+            width={resetIcon[0]}
+            height={resetIcon[1]}
+
             action={(e)=>resetInput(e)}
             stroke="var(--black)" 
             customStyle={{marginRight:16,alignSelf:"center",position:"absolute",right:16,top:"50%",translate:"50% -50%"}}/>

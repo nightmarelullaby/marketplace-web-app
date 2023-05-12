@@ -8,7 +8,7 @@
 }
 
 .input::placeholder{
-	color:b;
+	color:black;
 }
 .input:focus{
 	outline:2px solid var(--dominant-blue);

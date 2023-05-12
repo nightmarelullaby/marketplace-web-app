@@ -7,7 +7,6 @@ export default function ProductImage(
 	style,
 	children,
 	tagName}){
-	console.log(noHover)
 	return(
 		<div className={styles.imgWrapper}>
 		<div className={noHover? {display:"none"}:styles.tag}>

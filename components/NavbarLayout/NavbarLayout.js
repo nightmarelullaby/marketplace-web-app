@@ -122,8 +122,10 @@ function NavbarLayout({children}){
             </NavbarElement>
             <NavbarElement style={{marginLeft:"auto"}}>
               <Searchbar 
+                searchIcon={[16,16]}
+                resetIcon={[26,26]}
                 iconStyle={{marginLeft:16,alignSelf:"center"}}
-                inputStyle={{padding:8}}
+                inputStyle={{padding:4,}}
                 style={{backgroundColor:"white",display:"flex",borderRadius:8,padding:0}} 
                 placeholder="Ropa, zapatos..."/>
             </NavbarElement>

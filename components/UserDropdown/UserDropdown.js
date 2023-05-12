@@ -1,32 +1,29 @@
 import UserDropdownElement from "../PopOver/UserDropdownElement"
 import Checkbox from "../Checkbox/Checkbox"
 import {useEffect,useState,useRef} from "react"
+import useClickOutside from "../../hooks/useClickOutside"
 
 export default function UserDropdown(){
+	const setFalse = () => {
+		return setState(false)
+	}
 	const [state,setState] = useState(false)
+	const {buttonRef} = useClickOutside(setFalse)
+
 	const switchState = (e) => {
 		return setState(!state)
 	}
 
-	const dropdown = useRef()
-	const handleOutside = (e) => {
-		if(!dropdown.current.contains(e.target)) return setState(false)
-
-	}
-	useEffect(()=>{
-		document.addEventListener("click",handleOutside,false)
-		return () => document.removeEventListener("click",handleOutside,false)
-	},[state])
-
 	return(
-		<div ref={dropdown} style={{position:"relative",display:"flex",alignItems:"center"}}>
+		<div ref={buttonRef} 
+		style={{position:"relative",display:"flex",alignItems:"center"}}>
 		<button onClick={switchState} style={{position:"relative",cursor:"pointer",backgroundColor:"transparent",border:"none",display:"inline-flex",alignItems:"center"}}>
 			<svg fill="none" width="18" height="18" stroke="var(--light)" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
   				<path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"></path>
 			</svg>
 		</button>
 
-		<div style={state?{opacity:1,transition:".15s ease",position:"absolute",borderRadius:4,backgroundColor:"white",top:"200%",right:0,translate:"0 0"}:{translate:"8px -8px",opacity:0,position:"absolute",borderRadius:4,backgroundColor:"white",top:"200%",right:0,pointerEvents:"none"}}>
+		<div style={state?{boxShadow: "rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px",opacity:1,transition:".15s ease",position:"absolute",borderRadius:4,backgroundColor:"white",top:"200%",right:0,translate:"0 0"}:{translate:"8px -8px",opacity:0,position:"absolute",borderRadius:4,backgroundColor:"white",top:"200%",right:0,pointerEvents:"none"}}>
 		<div style={{display:"flex",flexDirection:"column",gap:4}}>
 			<div style={{padding:"12px 16px",display:"flex",gap:8,alignItems:"center"}}>
 				<svg fill="black" width="24" height="24"stroke="black" stroke-width="1.5" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">

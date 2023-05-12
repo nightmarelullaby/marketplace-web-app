@@ -36,8 +36,9 @@
 	color:var(--dominant-blue);
 	font-weight: 400;
 }
-.imgWrapper::after{
+/*.imgWrapper::after{
 	border-radius: 4px;
+	z-index:50;
 	transition: .15s ease;
 	content: "";
 	position: absolute;
@@ -48,7 +49,7 @@
 	height: 100%;
 	display: inline-block;
 }
-
+*/
 .img{
 	transition: .15s ease;
 }

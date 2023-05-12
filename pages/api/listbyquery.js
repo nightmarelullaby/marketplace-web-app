@@ -1,6 +1,6 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import getListByQuery from "../../services/getListByQuery"
-import allProductsFallback from "../../apiInfo/asos.js"
+import allProductsFallback from "../../apiInfo/asos.json"
 
 export default async function listbyquery(req, res) {
   const {query} = req.body

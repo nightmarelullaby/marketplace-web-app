@@ -1,6 +1,11 @@
 import styles from "./CloseButton.module.css"
 
-export default function CloseButton ({action,stroke,width,height,customStyle}){
+export default function CloseButton ({
+    action,
+    stroke,
+    width,
+    height,
+    customStyle}){
     return(
         <button 
             style={customStyle ? customStyle: null}
