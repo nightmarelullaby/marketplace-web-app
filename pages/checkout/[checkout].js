@@ -12,7 +12,7 @@ export function OrderSummary({ style, values=[{name:"Shipping",value:24}] }){
     return(
         <div style={style?style:{backgroundColor:"var(--light)",display:"flex",flexDirection:"column"}}>
             <p style={{fontSize:19.80,fontWeight:600}}>Order summary</p>
-            {values.map((v,i) => <div style={{display:"flex",justifyContent:"space-between"}}>
+            {values.map((v,i) => <div key={v.name} style={{display:"flex",justifyContent:"space-between"}}>
                     <p style={{color:"gray"}}>{v.name}</p>
                     <p style={{fontWeight:600}}>$ {v.value}</p>
                     
@@ -61,7 +61,7 @@ export default function Checkout() {
             <hr style={{margin:"32px 0",border:"none",height:1,backgroundColor:"lightgray"}}/> 
             <div style={{display:"flex",justifyContent:"space-between",gap:48}}>
             <div style={{display:"flex",flexDirection:"column",flexGrow:1}}>
-                {list.map(e=><div style={{flexGrow:1}}> <ShoppingCartElementColumn
+                {list.map(e=><div key={e.name}style={{flexGrow:1}}> <ShoppingCartElementColumn
                     title={e.name}
                     subtitle={e.colour}
                     style={{display:"flex",gap:24}}

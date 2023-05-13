@@ -47,7 +47,7 @@ export default function Id({response}){
   return (
      <div style={{padding:"",width:"100%"}}>
       <main>
-      <p>Mostrando 1 de 60 items para "<strong>{router.query.q}</strong>"</p>
+      <p>Mostrando 1 de 60 items para <strong>{router.query.q}</strong></p>
       </main>
 
       <section style={{marginTop:16}}>
