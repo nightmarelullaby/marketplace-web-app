@@ -131,7 +131,7 @@ export default Product;
 export async function getServerSideProps({id}){
 
 
-    let data = await axios.post("https://marketplace-web-d9tfdf3up-nightmarelullaby.vercel.app/api/productdetails",{id})  
+    let data = await axios.post("http://localhost:3000/api/productdetails",{id})  
     const response = await JSON.parse(JSON.stringify(data.data))
     return{
       props:{

@@ -269,7 +269,7 @@ export default function Home({response=false}) {
 export async function getServerSideProps({query}){
   const PORT = process.env.PORT || 3000
   if(Object.keys(query).length > 0) {
-    let data = await axios.post(`https://marketplace-web-d9tfdf3up-nightmarelullaby.vercel.app/api/listbyquery`,{query})  
+    let data = await axios.post(`http://localhost:3000/api/listbyquery`,{query})  
     const response = await JSON.parse(JSON.stringify(data.data))
     return{
       props:{

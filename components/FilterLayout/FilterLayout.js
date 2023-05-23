@@ -1,7 +1,8 @@
-import Filters from "../Filters/Filters"
+import Filters from "../Filters/Filters.js"
 import Button from "../Buttons/Button"
 
 export default function FilterLayout ({children}){
+
 	return (
 		<div style={{display:"flex",gap:24,marginTop:38,padding:"0 24px 0 0"}}>
 			<Filters>

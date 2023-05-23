@@ -15,7 +15,6 @@ export const NavbarResponsiveElement  = (props) => {
 const NavbarResponsive = (props) => {
     	 const [count,setCount] = useRecoilState(ShoppingCount)
          const [show, setShow] = useState(false)
-         console.log(props.children)
     return (
         <header  {...props} >
             <nav style={{position:"fixed",width:"100%",zIndex:100}}>

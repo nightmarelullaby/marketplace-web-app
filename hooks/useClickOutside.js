@@ -2,7 +2,6 @@ import {useEffect,useRef} from "react"
 
 const useClickOutside = (callback)=>{
 	const buttonRef = useRef()
-	console.log(callback)
 
 	const handleOutside = (e) => {
 			if(!buttonRef.current.contains(e.target)){ 

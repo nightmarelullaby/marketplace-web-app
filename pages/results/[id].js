@@ -24,8 +24,7 @@ import ProductImage from '../../components/Cards/ProductImage'
 import Skeleton from 'react-loading-skeleton'
 import {useState,useEffect} from "react"
 import FooterLayout from "../../components/FooterLayout/FooterLayout"
-import FilterLayout from "../../components/FilterLayout/FilterLayout"
-import Filters,{FilterElement} from "../../components/Filters/Filters"
+import FilterLayout from "../../components/FilterLayout/FilterLayout.js"
 import useSetQueryRouter from "../../hooks/useSetQueryRouter"
 export default function Id({response}){
     const {
@@ -35,8 +34,7 @@ export default function Id({response}){
     setNewUrl} = useSetQueryRouter()
   const [loading,setLoading] = useState(false )
   useEffect(()=>{
-    setLoading(false)
-    console.log(loading)}
+    setLoading(false)}
     ,[router.query])
 
   const [cart,setCart] = useRecoilState(ShoppingCount)
@@ -110,8 +108,7 @@ export default function Id({response}){
 export async function getServerSideProps(ctx){
   const query = ctx.query
 
-console.log("in servser",query)  
-  let data = await axios.post("https://marketplace-web-d9tfdf3up-nightmarelullaby.vercel.app/api/listbyquery",{query})
+  let data = await axios.post("http://localhost:3000/api/listbyquery",{query})
   const response = await JSON.parse(JSON.stringify(data.data))
   
   return{
@@ -129,8 +126,7 @@ Id.Layout = function Layout(page) {
             {page}  
           </FilterLayout>
         </NavbarLayout>
-        <FooterLayout>
-        </FooterLayout>
+        <FooterLayout/>
       </RecoilRoot>  
     </>
     )
