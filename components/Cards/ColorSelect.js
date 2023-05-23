@@ -1,6 +1,8 @@
 import {useState} from "react"
+import useClickOutside from "../../hooks/useClickOutside"
 
 export default function ColorSelect({padding=16,color="rgb(6, 10, 15)"}){
+
 	const initialStyle = {
 		display:"inline-flex",
 		padding:padding,
@@ -25,11 +27,18 @@ export default function ColorSelect({padding=16,color="rgb(6, 10, 15)"}){
 
 	const [actualStyle,setStyle] = useState(true)
 
+	const setSecondStyle = ()=>{
+		return setStyle(secondStyle)
+	}
 	const switchStyle = () => {
 		return setStyle(prev => !prev)
 	}
+	const {buttonRef} = useClickOutside(setSecondStyle)
+
 	return(
-		<div onClick={switchStyle} 
+		<div
+			ref={buttonRef} 
+			onClick={switchStyle} 
 			style={actualStyle?initialStyle:secondStyle}>
 			
 				<div style={{color:actualStyle?"black":"white",fontWeight:500}}></div>

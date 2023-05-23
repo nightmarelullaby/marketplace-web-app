@@ -1,3 +1,23 @@
 .main >h3{
 	font-family: 'Plus Jakarta Sans';
 }
+.main{
+	padding:80px,
+
+}
+.reviewSection{
+	display: flex;
+	align-items:center;
+	gap:24px;
+	flex-direction: column;
+}
+@media all and (max-width:700px){
+	.reviewSection{
+		gap:16px;
+		align-items:start;
+	}
+	.main{
+		padding:80px 16px;
+		flex-direction: column;
+	}
+}

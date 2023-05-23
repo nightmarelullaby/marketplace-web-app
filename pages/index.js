@@ -52,18 +52,19 @@ export default function Home({response=false}) {
   return (
     <>
       <main 
+
         style={{
           width:"100%",
           height:"100vh",
           overflow:"hidden",
           display:"flex",
-          padding:"0 0 0 32px",
+          padding:"0 0 0 0",
           background:"linear-gradient(1deg, rgb(10 27 47), rgb(6 10 15))",
           alignItems:"center",
           justifyContent:"space-between"}}>
 
-          <div>
-            <h2 style={{color:"var(--light)",width:600,lineHeight:1.09,fontWeight:800,letterSpacing:-0.4,fontFamily:"Plus Jakarta Sans"}}>Consigue hasta un 50% de descuento</h2>
+          <div className={styles.heroSection} >
+            <h2 className={styles.heroMainText}style={{color:"var(--light)",lineHeight:1.09,fontWeight:800,letterSpacing:-0.4,fontFamily:"Plus Jakarta Sans"}}>Consigue hasta un 50% de descuento</h2>
             <h4 style={{color:"var(--light)",marginTop:8,fontWeight:300}}>Ropa para damas, caballeros y niños</h4>
             <MoreButton 
             customStyles={{marginTop:24,border:"1px solid white",padding:"8px 16px",borderRadius:40}} 
@@ -73,8 +74,8 @@ export default function Home({response=false}) {
               </small>
             </MoreButton>
           </div>
-          <div style={{borderRadius:4,overflow:"hidden",height:"inherit"}}>
-            <img src="https://images.pexels.com/photos/1689731/pexels-photo-1689731.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"/> 
+          <div className={styles.heroImg} >
+            <img width={"100%"} height={"100%"} style={{objectFit:"cover"}}src="https://images.pexels.com/photos/1689731/pexels-photo-1689731.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"/> 
           </div>
 
         
@@ -82,7 +83,7 @@ export default function Home({response=false}) {
         {/*<div style={{width:"100%",height:250}}> div</div>*/}
         
       </main>
-    <div style={{padding:"0 72px",marginTop:24}}>
+    <div className={styles.section}>
     <section style={{display:"flex",flexDirection:"column",gap:16}}>
     <div style={{display:"flex",justifyContent:"space-between",alignItems:"center"}}>
               <p style={{fontSize:19.80,fontWeight:700,color:"rgb(6, 10, 15)",fontFamily:"Plus Jakarta Sans"}}>Categorías</p>
@@ -177,15 +178,8 @@ export default function Home({response=false}) {
                 </ProductCard>
 </div>
             </section>
-            <PromoSection customStyle={{marginTop:48}}>
-            <img style={{backgroundPosition:"left",clipPath:" polygon(0 0, 0% 100%, 100% 50%)",objectFit:"cover"}} src="https://images.pexels.com/photos/1183266/pexels-photo-1183266.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"/>
-              <div style={{padding:24,display:"flex",flexDirection:"column",gap:8}}>
-                <p style={{fontWeight:200,letterSpacing:1,color:"var(--light)",fontFamily:"Plus Jakarta Sans"}}>OFERTA LIMITADA</p>
-                <h3 style={{color:"white",lineHeight:1,fontFamily:"Plus Jakarta Sans"}}>40% de descuento en ropa deportiva</h3>
-                <MoreButton width="24" height="24" color="rgb(6, 10, 15)" customStyles={{marginTop:16,backgroundColor:"var(--light)",borderRadius:32,padding:"8px 24px",gap:8}}>
-                  <p style={{color:"rgb(6, 10, 15)",fontWeight:500}}>Ver las ofertas</p>
-                </MoreButton>
-      </div>
+            <PromoSection src="https://images.pexels.com/photos/1183266/pexels-photo-1183266.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"customStyle={{marginTop:48}}>
+           
             </PromoSection>
       <section style={{marginTop:48}}>
 
@@ -254,15 +248,15 @@ export default function Home({response=false}) {
             </section>
             <hr style={{width:"100%",margin:"48px 0",backgroundColor:"lightgray",height:1,border:"none"}}/>
             <section style={{display:"flex",gap:8,height:"400px",justifyContent:"center",flexDirection:"column",alignItems:"center"}}>
-              <h3 style={{width:800,textAlign:"center",fontWeight:900,color:"rgb(6, 10, 15)",fontFamily:"Plus Jakarta Sans"}}><mark style={{backgroundColor:"transparent",textDecoration:"underline",fontFamily:"inherit",color:"var(--dominant-blue)"}}>Suscríbete</mark> a nuestro diario para recibir las últimas actualizacaciones</h3>
+              <h3 style={{textAlign:"center",fontWeight:900,color:"rgb(6, 10, 15)",fontFamily:"Plus Jakarta Sans"}}><mark style={{backgroundColor:"transparent",textDecoration:"underline",fontFamily:"inherit",color:"var(--dominant-blue)"}}>Suscríbete</mark> a nuestro diario para recibir las últimas actualizacaciones</h3>
               <p style={{textAlign:"center",fontSize:19.80,color:"var(--blue)",fontFamily:"Plus Jakarta Sans"}}>Obten un 20% de descuento con tu primera orden suscribiéndote a nuestro diario</p>
-              <div style={{display:"flex",gap:8,marginTop:24}}>
+              <div style={{display:"flex",width:"100%",gap:8,marginTop:24}}>
                 <InputText/>
                 <Button customStyles={{backgroundColor:"rgb(6, 10, 15)",borderRadius:6,border:"none",padding:"16px 32px"}}>
                   <p style={{color:"var(--light)",fontWeight:400}}>Suscribirse</p>
                 </Button>
               </div>
-              <small style={{color:"gray",fontFamily:"Plus Jakarta Sans"}}>Podrás desuscrirte en cualquier momento</small>
+              <small style={{color:"gray",fontFamily:"Plus Jakarta Sans"}}>Podrás desuscribirte en cualquier momento</small>
               <small style={{color:"gray",fontFamily:"Plus Jakarta Sans"}}>Leer la política de privacidad <Link href="/">aquí.</Link></small>
             </section>
             

@@ -1,0 +1,21 @@
+.nav{
+
+}
+
+.navResponsive{
+    display: none;
+}
+@media all and (max-width:740px){
+    .nav{
+        display: none;
+        overflow: hidden;
+        height: 0;
+}
+    .navResponsive{
+        top:0;
+        z-index: 1000;
+        height:40px;
+        display:block;
+        position: fixed;
+    }
+}

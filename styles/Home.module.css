@@ -20,11 +20,40 @@
         font-size: 63.96px
     }
 }
-@media all and (max-width:350px){
+.heroImg{
+    border-radius:4px;
+    height: 100%;
+    overflow:hidden;
+    height:inherit;}
+@media all and (max-width:750px){
+    .heroMainText{
+        text-align: center;
+    }
+    .heroSection{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        bottom:200px;
+/*        min-width: 200px;*/
+        width: 90%;
+        left:50%;
+        translate: -50% 50%;
+        position: absolute;
+    }
+    .heroImg{
+        flex-grow:1;
+    }
     .homeTitle{
         font-size: 45.23px;
     }
     .homeDesc{
         font-size: 16px;
     }
+}
+
+.section{
+    padding:16px 16px;
+}
+@media all and (max-width:500px){
+
 }

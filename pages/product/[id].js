@@ -37,15 +37,16 @@ import FooterLayout from "../../components/FooterLayout/FooterLayout"
 import ColorSelect from "../../components/Cards/ColorSelect"
 
 const Product = ({response}) => {
+
   const regexp = /<(\/*?)(?!(em|p|br\s*\/|strong))\w+?.+?>/gim
   const description = response.info.aboutMe.split(regexp)
 
-  console.log(response)
+
     return (
         <main 
           className={styles.main}
           style={{
-            padding:80,
+
             display:"flex",
             gap:50,
             boxShadow:"rgba(0, 0, 0, 0.05) 0px 0px 0px 1px"}}>
@@ -55,7 +56,7 @@ const Product = ({response}) => {
 
               <div >
               <h4 style={{marginBottom:16,lineHeight:1,fontFamily:'Plus Jakarta Sans',color:"#111f30",fontWeight:700}}>{response.name}</h4>
-              <div style={{display:"flex",alignItems:"center",gap:24}}>
+              <div className={styles.reviewSection} style={{display:"flex"}}>
               <StarReview value={4} color="var(--dominant-blue)" width={20} height={20}/>
 
               

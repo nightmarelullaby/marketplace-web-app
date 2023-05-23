@@ -41,6 +41,17 @@ p{
 small{
 font-size:.875rem;
 }
-@font-face{
-
+@media all and (max-width:550px){
+  h3{
+    font-size:1.999rem;
+  }
+  h2{
+    font-size:2.827rem;
+  }
+  h1{
+    font-size:2.827rem;
+  }
+  h4{
+    font-size:16px;
+  }
 }

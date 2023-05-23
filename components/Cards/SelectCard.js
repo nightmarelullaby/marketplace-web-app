@@ -1,16 +1,27 @@
 import {useState} from "react"
+import useClickOutside from "../../hooks/useClickOutside"
 
 export default function SelectCard({title="Default",description="some default text to put under the title. You can change this."}){
+	
 	const initialStyle = {display:"flex",flexDirection:"column",maxWidth:280,padding:"14px 22px",cursor:"pointer",borderRadius:4,boxShadow: "rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px"}
 	const secondStyle = {display:"flex",flexDirection:"column",padding:"14px 22px",backgroundColor:"rgb(6, 10, 15)",maxWidth:280,cursor:"pointer",borderRadius:4,boxShadow: "rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px"}
-
-	const [actualStyle,setStyle] = useState(true)
 
 	const switchStyle = () => {
 		return setStyle(prev => !prev)
 	}
+	const setSecondStyle = ()=>{
+		return setStyle(secondStyle)
+	}
+
+	const [actualStyle,setStyle] = useState(true)
+	const {buttonRef} = useClickOutside(setSecondStyle)
+
+	
+
 	return(
-		<div onClick={switchStyle} 
+		<div
+			ref={buttonRef} 
+			onClick={switchStyle} 
 			style={actualStyle?initialStyle:secondStyle}>
 			{/*<div style={{display:"flex",alignItems:"center"}}>*/}
 				<p style={{color:actualStyle?"black":"white",fontWeight:500}}>{title}</p>

@@ -8,6 +8,8 @@ export default function Filters({children,style}){
 			width:"18vw",
 			padding:16,
 			borderRadius:6,
+			borderTopLeftRadius:0,
+			borderBottomLeftRadius:0,
 			boxShadow: "rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px",
 			display:"flex",
 			flexDirection:"column"}}>

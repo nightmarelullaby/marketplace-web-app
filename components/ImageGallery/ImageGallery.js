@@ -25,7 +25,7 @@ export default function ImageGallery({
 		setSelectedImage(previousImageUrl)
 	}
 	return(
-		<div style={{width:500}}>
+		<div style={{width:"100%"}}>
 			<div className={styles.main}style={{position:"relative",width:"100%"}}>
 			<button 
 				className={styles.buttonLeft}
@@ -80,7 +80,7 @@ export default function ImageGallery({
 			</div>
 		
 
-			<div style={{display:"flex",justifyContent:"space-between",height:150,gap:16}}>
+			<div style={{display:"flex",overflowX:"scroll",justifyContent:"space-between",height:150,gap:16}}>
 				{urls.map(e => {
 					if(e === selectedImage) return;
 					return(<img 
