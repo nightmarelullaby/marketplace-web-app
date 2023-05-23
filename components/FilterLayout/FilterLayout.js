@@ -1,11 +1,11 @@
-// import Filters from "../Filters/Filters.js"
+import Filters from "../../components/Filters/Filters.js"
 import Button from "../Buttons/Button"
 
 export default function FilterLayout ({children}){
 
 	return (
 		<div style={{display:"flex",gap:24,marginTop:38,padding:"0 24px 0 0"}}>
-			{/*<Filters>
+			<Filters>
 			       <div style={{display:"flex",flexDirection:"column",gap:8}}>
           <p style={{color:"black",fontWeight:600}}>Ordenar por</p>
             <div style={{display:"flex",gap:8}}>
@@ -20,7 +20,7 @@ export default function FilterLayout ({children}){
         <Button customStyles={{cursor:"pointer",border:"none",width:"100%",backgroundColor:"rgb(6, 10, 15)",borderRadius:6,padding:"16px 16px",marginTop:16}}>
                             <small style={{color:"white",fontWeight:600}}>Aplicar</small> 
                     </Button>
-			</Filters>*/}
+			</Filters>
 			{children}
 		</div>)
 }
