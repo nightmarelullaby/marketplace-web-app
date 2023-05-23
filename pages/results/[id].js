@@ -108,7 +108,7 @@ export default function Id({response}){
 export async function getServerSideProps(ctx){
   const query = ctx.query
 
-  let data = await axios.post("https://marketplace-web-app-nine.vercel.app/api/listbyquery",{query})
+  let data = await axios.post("https://marketplace-web-app-theta.vercel.app/api/listbyquery",{query})
   const response = await JSON.parse(JSON.stringify(data.data))
   
   return{

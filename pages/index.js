@@ -269,7 +269,7 @@ export default function Home({response=false}) {
 export async function getServerSideProps({query}){
   const PORT = process.env.PORT || 3000
   if(Object.keys(query).length > 0) {
-    let data = await axios.post(`https://marketplace-web-app-nine.vercel.app/api/listbyquery`,{query})  
+    let data = await axios.post(`https://marketplace-web-app-theta.vercel.app/api/listbyquery`,{query})  
     const response = await JSON.parse(JSON.stringify(data.data))
     return{
       props:{
@@ -278,7 +278,7 @@ export async function getServerSideProps({query}){
     }
   }
   
-  let data = await axios(`https://marketplace-web-app-nine.vercel.app/api/allProducts`)
+  let data = await axios(`https://marketplace-web-app-theta.vercel.app/api/allProducts`)
   const response = await JSON.parse(JSON.stringify(data.data))
   
   return{
