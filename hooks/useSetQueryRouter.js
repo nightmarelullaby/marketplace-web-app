@@ -7,8 +7,7 @@ const useSetQueryRouter = () =>{
         const queries = router.query
         queries.q = query    
         return router.push({...router,query:queries},null,{scroll:false})
-    }
-    
+    }   
     const setQueryCategory = (query="all") => {
         const queries = router.query
         queries.sort = query    

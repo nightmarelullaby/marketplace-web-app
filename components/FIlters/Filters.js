@@ -1,23 +1,50 @@
 import styles from "./Filters.module.css"
-import {useState} from "react"
-
-
-export default function Filters({children,style}){
+import React,{useState,useEffect,forwardRef,useRef,createRef,cloneElement} from "react"
+export function FilterCategoryHeader(props){
 	return(
-		<div style={{
-			width:"18vw",
-			padding:16,
-			borderRadius:6,
-			borderTopLeftRadius:0,
-			borderBottomLeftRadius:0,
-			boxShadow: "rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px",
-			display:"flex",
-			flexDirection:"column"}}>
-				<p style={{fontWeight:600}}>Filtros</p>
-				<hr style={{margin:"16px 0",border:"none",height:1,backgroundColor:"lightgray"}}/> 
-				<form>
-				{children}
-					
-				</form>
-		</div>)
+		<>
+			<p style={{color:"black",fontWeight:600}}>{props.children}</p>
+		</>)
 }
+export const FilterCheckBox = forwardRef((props,ref) => {
+	return(
+		<>
+         <div style={{display:"flex",gap:8}}>
+         	<input {...props} ref={ref} type="checkbox"/>
+         	<label><p style={{color:"gray"}}>{props.title}</p></label>
+         </div>
+         </>
+		)
+})
+
+export function WrapperFilterCheckBox(props){
+
+	let childrenRef = useRef([])
+
+	const uncheckOthers = (ref) => {
+		const a = childrenRef.current.filter(e => e !== ref)
+		console.log(a, ref)
+	}
+	// useEffect(()=>{
+	// 	console.log(childrenRef)
+	// },[childrenRef])    
+
+	return(
+		<>
+			{React.Children.map(props.children, (child, index) =>
+        		cloneElement(child, {
+          		ref: (ref) => (childrenRef.current[index] = ref),
+          		onClick:(ref)=> uncheckOthers(ref)
+        })
+      )}
+			<button onClick={()=> console.log(childrenRef)}> reveal refs</button>
+		</>)
+}
+
+export default function Filters(props){
+	return(
+		<form  className={styles.Wrapper} {...props}>
+			{props.children}
+		</form>)
+}
+
