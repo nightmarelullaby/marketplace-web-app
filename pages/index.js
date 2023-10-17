@@ -250,7 +250,7 @@ export default function Home({response=false}) {
             <section style={{display:"flex",gap:8,height:"400px",justifyContent:"center",flexDirection:"column",alignItems:"center"}}>
               <h3 style={{textAlign:"center",fontWeight:900,color:"rgb(6, 10, 15)",fontFamily:"Plus Jakarta Sans"}}><mark style={{backgroundColor:"transparent",textDecoration:"underline",fontFamily:"inherit",color:"var(--dominant-blue)"}}>Suscríbete</mark> a nuestro diario para recibir las últimas actualizacaciones</h3>
               <p style={{textAlign:"center",fontSize:19.80,color:"var(--blue)",fontFamily:"Plus Jakarta Sans"}}>Obten un 20% de descuento con tu primera orden suscribiéndote a nuestro diario</p>
-              <div style={{display:"flex",flexWrap:"wrap",justifyContent:"center",width:"100%",gap:8,marginTop:24}}>
+              <div style={{display:"flex",justifyContent:"center",width:"100%",gap:8,marginTop:24,flexWrap:"wrap"}}>
                 <InputText style={{padding:"16px auto"}}/>
                 <Button customStyles={{backgroundColor:"rgb(6, 10, 15)",borderRadius:6,border:"none",padding:"16px 32px"}}>
                   <p style={{color:"var(--light)",fontWeight:400}}>Suscribirse</p>
